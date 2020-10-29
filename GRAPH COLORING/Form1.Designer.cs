@@ -123,6 +123,7 @@
             this.Controls.Add(this.panel_Buttons);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.panel_Buttons.ResumeLayout(false);
