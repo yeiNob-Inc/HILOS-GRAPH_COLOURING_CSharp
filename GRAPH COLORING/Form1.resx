@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panel_Buttons.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btn_EraseGraph.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_EraseGraph.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btn_EraseGraph.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_EraseGraph.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft PhagsPa, 10pt</value>
+  </data>
+  <data name="btn_EraseGraph.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 182</value>
+  </data>
+  <data name="btn_EraseGraph.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="btn_EraseGraph.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 38</value>
+  </data>
+  <data name="btn_EraseGraph.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btn_EraseGraph.Text" xml:space="preserve">
+    <value>Borrar Grafo</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseGraph.Name" xml:space="preserve">
+    <value>btn_EraseGraph</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseGraph.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseGraph.Parent" xml:space="preserve">
+    <value>panel_Buttons</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseGraph.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btn_EraseVertex.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btn_EraseVertex.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btn_EraseVertex.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btn_EraseVertex.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft PhagsPa, 10pt</value>
+  </data>
+  <data name="btn_EraseVertex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 144</value>
+  </data>
+  <data name="btn_EraseVertex.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="btn_EraseVertex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 38</value>
+  </data>
+  <data name="btn_EraseVertex.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btn_EraseVertex.Text" xml:space="preserve">
+    <value>Borrar Nodo</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseVertex.Name" xml:space="preserve">
+    <value>btn_EraseVertex</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseVertex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseVertex.Parent" xml:space="preserve">
+    <value>panel_Buttons</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseVertex.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_GraphColoring.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btn_GraphColoring.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btn_GraphColoring.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btn_GraphColoring.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft PhagsPa, 10pt</value>
+  </data>
+  <data name="btn_GraphColoring.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 106</value>
+  </data>
+  <data name="btn_GraphColoring.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="btn_GraphColoring.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 38</value>
+  </data>
+  <data name="btn_GraphColoring.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btn_GraphColoring.Text" xml:space="preserve">
+    <value>Colorear Grafo</value>
+  </data>
+  <data name="&gt;&gt;btn_GraphColoring.Name" xml:space="preserve">
+    <value>btn_GraphColoring</value>
+  </data>
+  <data name="&gt;&gt;btn_GraphColoring.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_GraphColoring.Parent" xml:space="preserve">
+    <value>panel_Buttons</value>
+  </data>
+  <data name="&gt;&gt;btn_GraphColoring.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btn_AddEdge.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btn_AddEdge.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btn_AddEdge.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btn_AddEdge.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft PhagsPa, 10pt</value>
+  </data>
+  <data name="btn_AddEdge.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 68</value>
+  </data>
+  <data name="btn_AddEdge.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="btn_AddEdge.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 38</value>
+  </data>
+  <data name="btn_AddEdge.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btn_AddEdge.Text" xml:space="preserve">
+    <value>Agregar Relación/Arista</value>
+  </data>
+  <data name="&gt;&gt;btn_AddEdge.Name" xml:space="preserve">
+    <value>btn_AddEdge</value>
+  </data>
+  <data name="&gt;&gt;btn_AddEdge.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_AddEdge.Parent" xml:space="preserve">
+    <value>panel_Buttons</value>
+  </data>
+  <data name="&gt;&gt;btn_AddEdge.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btn_AddVertex.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btn_AddVertex.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btn_AddVertex.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btn_AddVertex.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft PhagsPa, 10pt</value>
+  </data>
+  <data name="btn_AddVertex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="btn_AddVertex.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="btn_AddVertex.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="btn_AddVertex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 38</value>
+  </data>
+  <data name="btn_AddVertex.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btn_AddVertex.Text" xml:space="preserve">
+    <value>Agregar Nodo/Vértice</value>
+  </data>
+  <data name="&gt;&gt;btn_AddVertex.Name" xml:space="preserve">
+    <value>btn_AddVertex</value>
+  </data>
+  <data name="&gt;&gt;btn_AddVertex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_AddVertex.Parent" xml:space="preserve">
+    <value>panel_Buttons</value>
+  </data>
+  <data name="&gt;&gt;btn_AddVertex.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panel_Buttons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>600, 145</value>
+  </data>
+  <data name="panel_Buttons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>30, 30, 30, 30</value>
+  </data>
+  <data name="panel_Buttons.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>30, 30, 30, 30</value>
+  </data>
+  <data name="panel_Buttons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 250</value>
+  </data>
+  <data name="panel_Buttons.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel_Buttons.Name" xml:space="preserve">
+    <value>panel_Buttons</value>
+  </data>
+  <data name="&gt;&gt;panel_Buttons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_Buttons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel_Buttons.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panel_GraphGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="panel_GraphGrid.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="panel_GraphGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>50, 25</value>
+  </data>
+  <data name="panel_GraphGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 500</value>
+  </data>
+  <data name="panel_GraphGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel_GraphGrid.Name" xml:space="preserve">
+    <value>panel_GraphGrid</value>
+  </data>
+  <data name="&gt;&gt;panel_GraphGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_GraphGrid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel_GraphGrid.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_names.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_names.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Ebrima, 12pt, style=Bold</value>
+  </data>
+  <data name="label_names.Location" type="System.Drawing.Point, System.Drawing">
+    <value>578, 425</value>
+  </data>
+  <data name="label_names.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 44</value>
+  </data>
+  <data name="label_names.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label_names.Text" xml:space="preserve">
+    <value>Flores Rodríguez Francisco Jacob
+González Rodríguez Germán Antonio</value>
+  </data>
+  <data name="label_names.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label_names.Name" xml:space="preserve">
+    <value>label_names</value>
+  </data>
+  <data name="&gt;&gt;label_names.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_names.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_names.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Ebrima, 12pt, style=Bold</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>644, 50</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 65</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>GRAPH COLORING
+
+IGCA [2020-2021/A]</value>
+  </data>
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>884, 561</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>900, 600</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GRAPH COLORING</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
