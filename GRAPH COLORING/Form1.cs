@@ -22,8 +22,8 @@ namespace GRAPH_COLORING
         private void panel_GraphGrid_Paint(object sender, PaintEventArgs e)
         {
             // Siempre que se minimiza la ventana o se hace algún movimiento, hay que redibujar la malla.
-            //Grid.MakeGridNoThreads(e, panel_GraphGrid, 5);
-            g.MakeGridThreads(panel_GraphGrid, e, 5);
+            Grid.MakeGridNoThreads(e, panel_GraphGrid, 5);
+            //g.MakeGridThreads(panel_GraphGrid, e, 1);
         }
     }
 }

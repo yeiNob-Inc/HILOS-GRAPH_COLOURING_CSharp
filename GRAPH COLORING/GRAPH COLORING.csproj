@@ -83,5 +83,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="CÓDIGOS GRAPH COLORING [OTROS LENGUAJES]\GC_Backtracking_c.c" />
+    <Content Include="CÓDIGOS GRAPH COLORING [OTROS LENGUAJES]\GC_Backtracking_Java.java" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

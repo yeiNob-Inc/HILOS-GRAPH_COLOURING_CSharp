@@ -18,6 +18,7 @@ namespace GRAPH_COLORING
     {
         // Variables globales que guardarán los valores de la malla.
         int cellSize, numCells; // El número de celdas también será global.
+        bool isDrawOccupied = false; // Para saber si ya se pintaron las líneas.
         PaintEventArgs e; // Con el que se hará el dibujado.
 
         /*
@@ -112,17 +113,31 @@ namespace GRAPH_COLORING
 
             // Usar una copia del que va a dibujar para que no se intente ocupar por todos a la vez.
             Graphics paint = e.Graphics;
-            for (int i = (int)startFinalIterator[0]; i < (int)startFinalIterator[1]; i++)
+            for (int i = (int)startFinalIterator[0] + 1; i < (int)startFinalIterator[1]; i++)
             {
                 x = y = i * cellSize;
 
                 /* e.Graphics.DrawLine(color, x1, y1, 2, y2); */
 
+                while (isDrawOccupied) ; // Mientras se esté dibujando, bloquear.
+                isDrawOccupied = true; // Ahora que empezará a dibujar, indicarlo.
                 // Las líneas de y van del 0 en y hasta el máximo, que es el número de celdas por su tamaño.
                 // Las x no cambian por imprimir en y.
-                //paint.DrawLine(color, x, 0, x, finalCoord);
-                //// Lo mismo pasa con las líneas en x. La y no cambia, pero las x van del 0 al xFinal.
-                //paint.DrawLine(color, 0, y, finalCoord, y);
+                // paint = new Bitmap(Buffer);
+                try
+                {
+                    paint.DrawLine(color, x, 0, x, finalCoord);
+                    // Lo mismo pasa con las líneas en x. La y no cambia, pero las x van del 0 al xFinal.
+                    paint.DrawLine(color, 0, y, finalCoord, y);
+                }
+                catch (System.ArgumentException)
+                {
+                    // Volver a intentar el proceso.
+                    /// i--;
+                    isDrawOccupied = false;
+                    continue; 
+                }
+                isDrawOccupied = false; // Indicar que ya se terminó de dibujar.
             }
         }
 
@@ -141,7 +156,7 @@ namespace GRAPH_COLORING
             Pen color = new Pen(Color.Black);
             int cellSize = grid.Size.Width / numCells, x, y, finalCoord = numCells * cellSize;
             // finalCoord es la última coordenada, el último punto de la línea.
-            for (int i = 0; i < numCells; i++)
+            for (int i = 1; i < numCells; i++)
             {
                 x = y = i * cellSize;
 
