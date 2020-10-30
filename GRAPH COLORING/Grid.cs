@@ -14,7 +14,7 @@ using System;
 
 namespace GRAPH_COLORING
 {
-    static class Grid
+    class Grid
     {
         // Variables globales que guardarán los valores de la malla.
         static int cellSize, numCells;
@@ -22,28 +22,19 @@ namespace GRAPH_COLORING
 
         /*
          * Utilizamos un DELEGATE para poder pasar el método como parámetro.**/
-        private delegate void DivideGridThreads(object _startFinalIterator);
+        // private delegate void DivideGridThreads(object _startFinalIterator);
 
         public static void MakeGridThreads(PaintEventArgs _e, System.Windows.Forms.Panel grid, int _numCells, int numThreads)
         {
-            Thread[] threads = { }; // Definimos el arreglo de hilos.
+            Thread[] threads = new Thread[numThreads]; // Definimos el arreglo de hilos.
             e = _e; // Asignamos el evento.
             numCells = _numCells; // El número de celdas también será global.
             // Definimos el tamaño de la celda compartido por los hilos.
             cellSize = grid.Size.Width / numCells;
 
-            // Este arreglo que se pasará como parámetro es provisional. Buscaré una mejor forma de implementarlo.
-            int[] StartFinalIterator = new int[numThreads * 2];
-            int actualIterator = 0; // Para guardarlo y pasarlo como parámetro.
-            int incrementIterator = numCells / numThreads; // La porción de líneas que le tocará a cada hilo
-            for (int i = 0; i < numThreads * 2; i += 2){
-                StartFinalIterator[i] = actualIterator;// Iterador inicial
-                actualIterator += incrementIterator;
-                StartFinalIterator[i + 1] = actualIterator;// Iterador Final
-            }
+            
 
-            DivideGridThreads d = new DivideGridThreads(DivideGridThreads);
-            createThreads(ref threads, 5, d, StartFinalIterator);
+            createThreads(ref threads, 5);
         }
         /// <summary>
         /// MÉTODO QUE CREA LOS n HILOS CON EL MÉTODO QUE SE PASE COMO PARÁMETRO
@@ -64,13 +55,20 @@ namespace GRAPH_COLORING
         ///     Esto tomando en consideración que se corren de la siguiente manera:
         ///         threads[i] = new Thread(Método a correr);
         ///         threads[i].Start(Parámetros de la función);
-        private static void createThreads(ref Thread[] threads, int numThreads, System.Threading.ThreadStart method, object threadMethodParams)
+        private static void createThreads(ref Thread[] threads, int numThreads)
         {
-            for(int i = 0; i < numThreads; i++)
+            // Este arreglo que se pasará como parámetro es provisional. Buscaré una mejor forma de implementarlo.
+            int[] StartFinalIterator = new int[2];
+            int actualIterator = 0; // Para guardarlo y pasarlo como parámetro.
+            int incrementIterator = numCells / numThreads; // La porción de líneas que le tocará a cada hilo
+            for (int i = 0; i < numThreads; i++)
             {
-                new Thread(DivideGridThreads);
-                threads[i] = new Thread(method); // Método de los hilos.
-                threads[i].Start(threadMethodParams); // Parámetros del método.
+                StartFinalIterator[0] = actualIterator;// Iterador inicial
+                actualIterator += incrementIterator; // Le sumamos el incremento.
+                StartFinalIterator[1] = actualIterator;// Iterador Final
+
+                threads[i] = new Thread(DivideGridThreads); // Método de los hilos.
+                threads[i].Start(StartFinalIterator); // Parámetros del método.
             }
         }
         
@@ -106,6 +104,9 @@ namespace GRAPH_COLORING
             // Se hace un cast a int del parámetro, ya que solo podemos recibir 
             //      de tipo Object (del cuál heredan todas las clases), y aquí dentro
             //      podemos ser explícitos con el tipo de parámetro que es.
+
+            // Usar una copia del que va a dibujar para que no se intente ocupar por todos a la vez.
+            Graphics paint = e.Graphics;
             for (int i = (int)startFinalIterator[0]; i < (int)startFinalIterator[1]; i++)
             {
                 x = y = i * cellSize;
@@ -114,9 +115,9 @@ namespace GRAPH_COLORING
 
                 // Las líneas de y van del 0 en y hasta el máximo, que es el número de celdas por su tamaño.
                 // Las x no cambian por imprimir en y.
-                e.Graphics.DrawLine(color, x, 0, x, finalCoord);
+                paint.DrawLine(color, x, 0, x, finalCoord);
                 // Lo mismo pasa con las líneas en x. La y no cambia, pero las x van del 0 al xFinal.
-                e.Graphics.DrawLine(color, 0, y, finalCoord, y);
+                paint.DrawLine(color, 0, y, finalCoord, y);
             }
         }
 
