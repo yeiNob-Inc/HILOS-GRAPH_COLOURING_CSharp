@@ -12,44 +12,38 @@ using System.Windows.Forms;
 
 namespace GRAPH_COLORING
 {
-    class Grid
+    static class Grid
     {
         // Variables globales que guardarán los valores de la malla.
-        int gridX, gridY, gridWidth, gridHeight;
-        /// <summary>
-        /// Constructor que recibe el cuadro en donde se dibujarán los nodos,
-        ///     para así poder dibujar la malla repartiendo el trabajo entre varios hilos.
-        /// </summary>
-        /// <param name="gridForm"></param>
-        public Grid(System.Windows.Forms.Panel gridForm, int gridPosX, int gridPosY)
-        {
-            // Establecemos los valores que utilizaremos.
-            gridWidth = gridForm.ClientSize.Width;
-            gridHeight = gridForm.ClientSize.Height;
-            gridX = gridPosX;
-            //gridY = gridPosY;
-            gridY = 0;
-            // $Grid: gridWidth = 498, gridWidth = 498, gridX = 50, gridY = 0
-        }
+        // static int gridX, gridY, gridWidth, gridHeight;
+
+
+
         /// <summary>
         /// 
         /// Método que creará las líneas de la malla en el panel.
         /// Dividirá este proceso entre varios hilos.
+        /// 
         /// </summary>
-        /// <param name="matrixTam"></param>
-        /// El parámetro indicará el tamaño del que queremos la matriz nxn.
-        public void makeGridNoThreads(int matrixTam, PaintEventArgs e)
+        /// <param name="e"></param>
+        /// <param name="grid"></param>
+        /// <param name="numCells"></param>
+        public static void MakeGridNoThreads(PaintEventArgs e, System.Windows.Forms.Panel grid, int numCells)
         {
-            int incrementX = gridWidth / matrixTam, incrementY = gridHeight / matrixTam;
             Pen color = new Pen(Color.Black);
-            for(int i = 0, x = gridX, y = gridY; i < matrixTam; i++, x += incrementX)
+            int cellSize = grid.Size.Width / numCells, x, y, finalCoord = numCells * cellSize;
+            // finalCoord es la última coordenada, el último punto de la línea.
+            for (int i = 0; i < numCells; i++)
             {
-                e.Graphics.DrawLine(color, x, y, incrementX, y);
-                for (int j = 0; j < matrixTam; j++, y += incrementY)
-                {
-                    //System.Drawing.Drawing2D.
-                    e.Graphics.DrawLine(color, x, y, x, incrementY);
-                }
+                x = y = i * cellSize;
+
+                /* e.Graphics.DrawLine(color, x1, y1, 2, y2); */
+
+                // Las líneas de y van del 0 en y hasta el máximo, que es el número de celdas por su tamaño.
+                // Las x no cambian por imprimir en y.
+                e.Graphics.DrawLine(color, x, 0, x, finalCoord);
+                // Lo mismo pasa con las líneas en x. La y no cambia, pero las x van del 0 al xFinal.
+                e.Graphics.DrawLine(color, 0, y, finalCoord, y);
             }
         }
     }
