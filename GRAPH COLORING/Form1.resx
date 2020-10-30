@@ -357,6 +357,9 @@
   <data name="panel_GraphGrid.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 25</value>
   </data>
+  <data name="panel_GraphGrid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
   <data name="panel_GraphGrid.Size" type="System.Drawing.Size, System.Drawing">
     <value>500, 500</value>
   </data>

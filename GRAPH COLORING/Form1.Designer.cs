@@ -94,6 +94,7 @@
             this.panel_GraphGrid.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_GraphGrid.Name = "panel_GraphGrid";
             this.panel_GraphGrid.Tag = "GraphElements";
+            this.panel_GraphGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_GraphGrid_Paint);
             // 
             // label_names
             // 
