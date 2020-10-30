@@ -1,5 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using System.Threading;
+using System;
 
 /*
  * CLASE QUE MANEJARÁ LA MALLA EN DONDE SE DIBUJARÁN LOS NODOS DEL GRAFO.
@@ -15,8 +17,108 @@ namespace GRAPH_COLORING
     static class Grid
     {
         // Variables globales que guardarán los valores de la malla.
-        // static int gridX, gridY, gridWidth, gridHeight;
+        static int cellSize, numCells;
+        static PaintEventArgs e; // Con el que se hará el dibujado.
 
+        /*
+         * Utilizamos un DELEGATE para poder pasar el método como parámetro.**/
+        private delegate void DivideGridThreads(object _startFinalIterator);
+
+        public static void MakeGridThreads(PaintEventArgs _e, System.Windows.Forms.Panel grid, int _numCells, int numThreads)
+        {
+            Thread[] threads = { }; // Definimos el arreglo de hilos.
+            e = _e; // Asignamos el evento.
+            numCells = _numCells; // El número de celdas también será global.
+            // Definimos el tamaño de la celda compartido por los hilos.
+            cellSize = grid.Size.Width / numCells;
+
+            // Este arreglo que se pasará como parámetro es provisional. Buscaré una mejor forma de implementarlo.
+            int[] StartFinalIterator = new int[numThreads * 2];
+            int actualIterator = 0; // Para guardarlo y pasarlo como parámetro.
+            int incrementIterator = numCells / numThreads; // La porción de líneas que le tocará a cada hilo
+            for (int i = 0; i < numThreads * 2; i += 2){
+                StartFinalIterator[i] = actualIterator;// Iterador inicial
+                actualIterator += incrementIterator;
+                StartFinalIterator[i + 1] = actualIterator;// Iterador Final
+            }
+
+            DivideGridThreads d = new DivideGridThreads(DivideGridThreads);
+            createThreads(ref threads, 5, d, StartFinalIterator);
+        }
+        /// <summary>
+        /// MÉTODO QUE CREA LOS n HILOS CON EL MÉTODO QUE SE PASE COMO PARÁMETRO
+        ///     Y EL ARGUMENTO QUE SE PASE COMO PARÁMETRO PARA LA FUNCIÓN QUE CORRA
+        ///     LOS HILOS.
+        /// </summary>
+        /// <param name="threads"></param>
+        ///     Arreglo de hilos, en donde se crearán y correrán.
+        ///     Pasan por referencia, por eso la palabra reservada "ref".
+        /// <param name="numThreads"></param>
+        ///     Número de hilos a crear.
+        /// <param name="method"></param>
+        ///     Nombre del método a correr en los hilos.
+        ///     Es del tipo System.Threading.ThreadStart porque es el parámetro
+        ///         que admite el constructor.
+        /// <param name="threadMethodParams"></param>
+        ///     Son los parámetros con los que correrán los métodos.
+        ///     Esto tomando en consideración que se corren de la siguiente manera:
+        ///         threads[i] = new Thread(Método a correr);
+        ///         threads[i].Start(Parámetros de la función);
+        private static void createThreads(ref Thread[] threads, int numThreads, System.Threading.ThreadStart method, object threadMethodParams)
+        {
+            for(int i = 0; i < numThreads; i++)
+            {
+                new Thread(DivideGridThreads);
+                threads[i] = new Thread(method); // Método de los hilos.
+                threads[i].Start(threadMethodParams); // Parámetros del método.
+            }
+        }
+        
+        private static void RunThreads(ref Thread[] threads, object threadMethodParams)
+        {
+            for(int i = 0; i < threads.Length; i++)
+                threads[i].Start(threadMethodParams); // Parámetros del método.
+        }
+        
+        /// <summary>
+        /// MÉTODO QUE DIVIDE EL PINTAR LAS MATRICES TOMANDO EN CUENTA EL
+        ///     VALOR INICIAL DEL ITERADOR, Y EL VALOR FINAL.
+        ///     Estos valores dependen de en cuántos hilos se divida el proceso.
+        ///     
+        /// El parámetro recibirá un arreglo con los dos valores, pero solo así se pueden mandar
+        ///     parámetros en funciones con hilos.
+        ///     
+        /// Thread t = new Thread(DivideGridThreads);
+        /// t.Start(parámetro: int[] valoresIteradores);
+        /// 
+        /// numCells, cellSize, y e (para dibujar las líneas) son globales.
+        /// 
+        /// </summary>
+        /// <param name="startIteratorFinalIterator"></param>
+        private static void DivideGridThreads(object _startFinalIterator)
+        {
+            // startIteratorFinalIterator[0] = Iterador inicial.
+            // startIteratorFinalIterator[1] = Máximo iterador.
+            Pen color = new Pen(Color.Black);
+            int x, y, finalCoord = numCells * cellSize;
+            // Recibimos un arreglo de enteros como parámetro. Aquí lo convertimos.
+            int[] startFinalIterator = (int[])_startFinalIterator;
+            // Se hace un cast a int del parámetro, ya que solo podemos recibir 
+            //      de tipo Object (del cuál heredan todas las clases), y aquí dentro
+            //      podemos ser explícitos con el tipo de parámetro que es.
+            for (int i = (int)startFinalIterator[0]; i < (int)startFinalIterator[1]; i++)
+            {
+                x = y = i * cellSize;
+
+                /* e.Graphics.DrawLine(color, x1, y1, 2, y2); */
+
+                // Las líneas de y van del 0 en y hasta el máximo, que es el número de celdas por su tamaño.
+                // Las x no cambian por imprimir en y.
+                e.Graphics.DrawLine(color, x, 0, x, finalCoord);
+                // Lo mismo pasa con las líneas en x. La y no cambia, pero las x van del 0 al xFinal.
+                e.Graphics.DrawLine(color, 0, y, finalCoord, y);
+            }
+        }
 
 
         /// <summary>

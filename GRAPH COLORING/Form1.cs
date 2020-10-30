@@ -12,7 +12,6 @@ namespace GRAPH_COLORING
 {
     public partial class Form1 : Form
     {
-        bool isPaint = false; // Bool que verificará si se pintó o no la malla.
         public Form1()
         {
             InitializeComponent();
@@ -20,6 +19,7 @@ namespace GRAPH_COLORING
 
         private void panel_GraphGrid_Paint(object sender, PaintEventArgs e)
         {
+            // Siempre que se minimiza la ventana o se hace algún movimiento, hay que redibujar la malla.
             Grid.MakeGridNoThreads(e, panel_GraphGrid, 5);
         }
     }
