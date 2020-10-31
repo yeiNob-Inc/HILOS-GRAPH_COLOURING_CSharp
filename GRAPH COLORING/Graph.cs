@@ -27,7 +27,6 @@ namespace GRAPH_COLORING
             //InitializeAdjMatrix(ref adjacencyMatrix);
             vertexSet.Add(new Vertex(System.Drawing.Color.Beige, 3, 4));
             vertexSet.Add(new Vertex(System.Drawing.Color.Red, 1, 2));
-            vertexSet.Add(new Vertex(System.Drawing.Color.BlanchedAlmond, 1, 3));
         }
         // Método que imprime todos los vértices.
         public void DrawAllVertex(PaintEventArgs e)
