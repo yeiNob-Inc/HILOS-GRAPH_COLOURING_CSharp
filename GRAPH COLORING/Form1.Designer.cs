@@ -85,6 +85,7 @@
             this.btn_AddVertex.Name = "btn_AddVertex";
             this.btn_AddVertex.Tag = "Button";
             this.btn_AddVertex.UseVisualStyleBackColor = true;
+            this.btn_AddVertex.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_AddVertex);
             // 
             // panel_GraphGrid
             // 

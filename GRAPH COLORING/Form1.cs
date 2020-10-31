@@ -33,5 +33,10 @@ namespace GRAPH_COLORING
             //v = new Vertex(System.Drawing.Color.Red, 1, 2);
             //v.DrawVertex(e);
         }
+
+        private void btn_AddVertex(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }
