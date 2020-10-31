@@ -142,7 +142,7 @@
     <value>5, 5, 5, 5</value>
   </data>
   <data name="btn_EraseGraph.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 38</value>
+    <value>178, 38</value>
   </data>
   <data name="btn_EraseGraph.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -181,7 +181,7 @@
     <value>5, 5, 5, 5</value>
   </data>
   <data name="btn_EraseVertex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 38</value>
+    <value>178, 38</value>
   </data>
   <data name="btn_EraseVertex.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -220,7 +220,7 @@
     <value>5, 5, 5, 5</value>
   </data>
   <data name="btn_GraphColoring.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 38</value>
+    <value>178, 38</value>
   </data>
   <data name="btn_GraphColoring.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -259,7 +259,7 @@
     <value>5, 5, 5, 5</value>
   </data>
   <data name="btn_AddEdge.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 38</value>
+    <value>178, 38</value>
   </data>
   <data name="btn_AddEdge.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -301,7 +301,7 @@
     <value>5, 5, 5, 5</value>
   </data>
   <data name="btn_AddVertex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 38</value>
+    <value>178, 38</value>
   </data>
   <data name="btn_AddVertex.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -322,7 +322,7 @@
     <value>4</value>
   </data>
   <data name="panel_Buttons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>600, 145</value>
+    <value>644, 145</value>
   </data>
   <data name="panel_Buttons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>30, 30, 30, 30</value>
@@ -331,7 +331,7 @@
     <value>30, 30, 30, 30</value>
   </data>
   <data name="panel_Buttons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 250</value>
+    <value>238, 250</value>
   </data>
   <data name="panel_Buttons.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -346,7 +346,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel_Buttons.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>14</value>
   </data>
   <data name="panel_GraphGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -376,7 +376,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel_GraphGrid.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>13</value>
   </data>
   <data name="label_names.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -410,7 +410,7 @@ González Rodríguez Germán Antonio</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_names.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>12</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -448,10 +448,10 @@ IGCA [2020-2021/A]</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>11</value>
   </data>
   <data name="textBox_VertexX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>553, 186</value>
+    <value>578, 175</value>
   </data>
   <data name="textBox_VertexX.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 20</value>
@@ -469,10 +469,10 @@ IGCA [2020-2021/A]</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBox_VertexX.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>10</value>
   </data>
   <data name="textBox_VertexY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 186</value>
+    <value>603, 175</value>
   </data>
   <data name="textBox_VertexY.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 20</value>
@@ -490,13 +490,13 @@ IGCA [2020-2021/A]</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBox_VertexY.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>8</value>
   </data>
   <data name="label_XY.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label_XY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>553, 170</value>
+    <value>578, 159</value>
   </data>
   <data name="label_XY.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -517,49 +517,211 @@ IGCA [2020-2021/A]</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_XY.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>6</value>
   </data>
-  <data name="textBox_EdgeX.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="textBox_EdgeV1X.Location" type="System.Drawing.Point, System.Drawing">
     <value>553, 224</value>
   </data>
-  <data name="textBox_EdgeX.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="textBox_EdgeV1X.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 20</value>
   </data>
-  <data name="textBox_EdgeX.TabIndex" type="System.Int32, mscorlib">
+  <data name="textBox_EdgeV1X.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;textBox_EdgeX.Name" xml:space="preserve">
-    <value>textBox_EdgeX</value>
+  <data name="&gt;&gt;textBox_EdgeV1X.Name" xml:space="preserve">
+    <value>textBox_EdgeV1X</value>
   </data>
-  <data name="&gt;&gt;textBox_EdgeX.Type" xml:space="preserve">
+  <data name="&gt;&gt;textBox_EdgeV1X.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox_EdgeX.Parent" xml:space="preserve">
+  <data name="&gt;&gt;textBox_EdgeV1X.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox_EdgeX.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;textBox_EdgeV1X.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
-  <data name="textBox_EdgeY.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="textBox_EdgeV1Y.Location" type="System.Drawing.Point, System.Drawing">
     <value>578, 224</value>
   </data>
-  <data name="textBox_EdgeY.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="textBox_EdgeV1Y.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 20</value>
   </data>
-  <data name="textBox_EdgeY.TabIndex" type="System.Int32, mscorlib">
+  <data name="textBox_EdgeV1Y.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;textBox_EdgeY.Name" xml:space="preserve">
-    <value>textBox_EdgeY</value>
+  <data name="&gt;&gt;textBox_EdgeV1Y.Name" xml:space="preserve">
+    <value>textBox_EdgeV1Y</value>
   </data>
-  <data name="&gt;&gt;textBox_EdgeY.Type" xml:space="preserve">
+  <data name="&gt;&gt;textBox_EdgeV1Y.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox_EdgeY.Parent" xml:space="preserve">
+  <data name="&gt;&gt;textBox_EdgeV1Y.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox_EdgeY.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;textBox_EdgeV1Y.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="textBox_EdgeV2Y.Location" type="System.Drawing.Point, System.Drawing">
+    <value>628, 224</value>
+  </data>
+  <data name="textBox_EdgeV2Y.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="textBox_EdgeV2Y.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeV2Y.Name" xml:space="preserve">
+    <value>textBox_EdgeV2Y</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeV2Y.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeV2Y.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeV2Y.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="textBox_EdgeV2X.Location" type="System.Drawing.Point, System.Drawing">
+    <value>603, 224</value>
+  </data>
+  <data name="textBox_EdgeV2X.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="textBox_EdgeV2X.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeV2X.Name" xml:space="preserve">
+    <value>textBox_EdgeV2X</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeV2X.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeV2X.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeV2X.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>553, 208</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value> x        y</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>565, 200</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 13</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>V1</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>602, 208</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value> x        y</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>614, 200</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 13</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>V2</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

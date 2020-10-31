@@ -23,55 +23,55 @@ namespace GRAPH_COLORING
 
         }
 
-        //public bool setColors(Vertex vertex)
-        //{
+        public bool setColors(Vertex vertex)
+        {
 
-        //    for (int colorIndex = 0; colorIndex < colors.Length; colorIndex++)
-        //    {
+            for (int colorIndex = 0; colorIndex < colors.Length; colorIndex++)
+            {
 
-        //        // Step-1 : checking validity
-        //        if (!canColorWith(colorIndex, vertex)) continue;  //Step-2 : Continue
+                // Step-1 : checking validity
+                if (!canColorWith(colorIndex, vertex)) continue;  //Step-2 : Continue
 
-        //        //Step-2 : coloring
-        //        vertex.color = colors[colorIndex];
-        //        vertex.IsColored = true;
-        //        colorCount++;
+                //Step-2 : coloring
+                vertex.color = colors[colorIndex];
+                vertex.IsColored = true;
+                colorCount++;
 
-        //        //Step-4 : Whether all vertices colored?
-        //        if (colorCount == numberOfVertices) //Base Case
-        //            return true;
+                //Step-4 : Whether all vertices colored?
+                if (colorCount == numberOfVertices) //Base Case
+                    return true;
 
-        //        //Step-5 : Next uncolored vertex
-        //        for (Edge edge:vertex.adjacentEdges)
-        //        {
-        //            if (!edge.targetVertex.colored)
-        //            {
+                //Step-5 : Next uncolored vertex
+                for (Edge edge:vertex.adjacentEdges)
+                {
+                    if (!edge.targetVertex.colored)
+                    {
 
-        //                if (setColors(edge.targetVertex))
-        //                    return true;
-        //            }
+                        if (setColors(edge.targetVertex))
+                            return true;
+                    }
 
-        //        }
-        //    }
+                }
+            }
 
-        //    // Step-3 : Backtracking
-        //    vertex.color = "";
-        //    vertex.colored = false;
-        //    return false;
-        //}
+            // Step-3 : Backtracking
+            vertex.color = "";
+            vertex.colored = false;
+            return false;
+        }
 
-        ////Function to check whether it is valid to color with color[colorIndex]
-        //private boolean canColorWith(int colorIndex, Vertex vertex)
-        //{
-        //    Vertex neighborVertex;
-        //    for (Edge edge:vertex.adjacentEdges)
-        //    {
-        //        neighborVertex = edge.targetVertex;
-        //        if (neighborVertex.colored && neighborVertex.color == colors[colorIndex])
-        //            return false;
-        //    }
+        //Function to check whether it is valid to color with color[colorIndex]
+        private boolean canColorWith(int colorIndex, Vertex vertex)
+        {
+            Vertex neighborVertex;
+            for (Edge edge:vertex.adjacentEdges)
+            {
+                neighborVertex = edge.targetVertex;
+                if (neighborVertex.colored && neighborVertex.color == colors[colorIndex])
+                    return false;
+            }
 
-        //    return true;
-        //}
+            return true;
+        }
     }
 }

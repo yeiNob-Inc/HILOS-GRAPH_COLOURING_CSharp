@@ -41,8 +41,14 @@
             this.textBox_VertexX = new System.Windows.Forms.TextBox();
             this.textBox_VertexY = new System.Windows.Forms.TextBox();
             this.label_XY = new System.Windows.Forms.Label();
-            this.textBox_EdgeX = new System.Windows.Forms.TextBox();
-            this.textBox_EdgeY = new System.Windows.Forms.TextBox();
+            this.textBox_EdgeV1X = new System.Windows.Forms.TextBox();
+            this.textBox_EdgeV1Y = new System.Windows.Forms.TextBox();
+            this.textBox_EdgeV2Y = new System.Windows.Forms.TextBox();
+            this.textBox_EdgeV2X = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel_Buttons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +89,7 @@
             this.btn_AddEdge.Name = "btn_AddEdge";
             this.btn_AddEdge.Tag = "Button";
             this.btn_AddEdge.UseVisualStyleBackColor = true;
+            this.btn_AddEdge.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_AddEdge_MouseUp);
             // 
             // btn_AddVertex
             // 
@@ -135,24 +142,60 @@
             resources.ApplyResources(this.label_XY, "label_XY");
             this.label_XY.Name = "label_XY";
             // 
-            // textBox_EdgeX
+            // textBox_EdgeV1X
             // 
-            resources.ApplyResources(this.textBox_EdgeX, "textBox_EdgeX");
-            this.textBox_EdgeX.Name = "textBox_EdgeX";
+            resources.ApplyResources(this.textBox_EdgeV1X, "textBox_EdgeV1X");
+            this.textBox_EdgeV1X.Name = "textBox_EdgeV1X";
             // 
-            // textBox_EdgeY
+            // textBox_EdgeV1Y
             // 
-            resources.ApplyResources(this.textBox_EdgeY, "textBox_EdgeY");
-            this.textBox_EdgeY.Name = "textBox_EdgeY";
+            resources.ApplyResources(this.textBox_EdgeV1Y, "textBox_EdgeV1Y");
+            this.textBox_EdgeV1Y.Name = "textBox_EdgeV1Y";
+            // 
+            // textBox_EdgeV2Y
+            // 
+            resources.ApplyResources(this.textBox_EdgeV2Y, "textBox_EdgeV2Y");
+            this.textBox_EdgeV2Y.Name = "textBox_EdgeV2Y";
+            // 
+            // textBox_EdgeV2X
+            // 
+            resources.ApplyResources(this.textBox_EdgeV2X, "textBox_EdgeV2X");
+            this.textBox_EdgeV2X.Name = "textBox_EdgeV2X";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
             // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBox_EdgeV2Y);
+            this.Controls.Add(this.textBox_EdgeV2X);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label_XY);
-            this.Controls.Add(this.textBox_EdgeY);
+            this.Controls.Add(this.textBox_EdgeV1Y);
             this.Controls.Add(this.textBox_VertexY);
-            this.Controls.Add(this.textBox_EdgeX);
+            this.Controls.Add(this.textBox_EdgeV1X);
             this.Controls.Add(this.textBox_VertexX);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_names);
@@ -183,8 +226,14 @@
         public System.Windows.Forms.TextBox textBox_VertexX;
         public System.Windows.Forms.TextBox textBox_VertexY;
         private System.Windows.Forms.Label label_XY;
-        public System.Windows.Forms.TextBox textBox_EdgeX;
-        public System.Windows.Forms.TextBox textBox_EdgeY;
+        public System.Windows.Forms.TextBox textBox_EdgeV1X;
+        public System.Windows.Forms.TextBox textBox_EdgeV1Y;
+        public System.Windows.Forms.TextBox textBox_EdgeV2Y;
+        public System.Windows.Forms.TextBox textBox_EdgeV2X;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 
