@@ -346,7 +346,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel_Buttons.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>8</value>
   </data>
   <data name="panel_GraphGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -376,7 +376,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel_GraphGrid.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="label_names.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -410,7 +410,7 @@ González Rodríguez Germán Antonio</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_names.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -448,7 +448,118 @@ IGCA [2020-2021/A]</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="textBox_VertexX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>553, 186</value>
+  </data>
+  <data name="textBox_VertexX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="textBox_VertexX.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;textBox_VertexX.Name" xml:space="preserve">
+    <value>textBox_VertexX</value>
+  </data>
+  <data name="&gt;&gt;textBox_VertexX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_VertexX.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox_VertexX.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBox_VertexY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>578, 186</value>
+  </data>
+  <data name="textBox_VertexY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="textBox_VertexY.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;textBox_VertexY.Name" xml:space="preserve">
+    <value>textBox_VertexY</value>
+  </data>
+  <data name="&gt;&gt;textBox_VertexY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_VertexY.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox_VertexY.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_XY.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_XY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>553, 170</value>
+  </data>
+  <data name="label_XY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
+  </data>
+  <data name="label_XY.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label_XY.Text" xml:space="preserve">
+    <value>  x       y</value>
+  </data>
+  <data name="&gt;&gt;label_XY.Name" xml:space="preserve">
+    <value>label_XY</value>
+  </data>
+  <data name="&gt;&gt;label_XY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_XY.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_XY.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="textBox_EdgeX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>553, 224</value>
+  </data>
+  <data name="textBox_EdgeX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="textBox_EdgeX.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeX.Name" xml:space="preserve">
+    <value>textBox_EdgeX</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeX.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeX.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="textBox_EdgeY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>578, 224</value>
+  </data>
+  <data name="textBox_EdgeY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="textBox_EdgeY.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeY.Name" xml:space="preserve">
+    <value>textBox_EdgeY</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeY.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox_EdgeY.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

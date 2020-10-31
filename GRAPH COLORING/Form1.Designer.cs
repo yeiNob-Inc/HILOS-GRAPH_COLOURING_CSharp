@@ -38,6 +38,11 @@
             this.panel_GraphGrid = new System.Windows.Forms.Panel();
             this.label_names = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox_VertexX = new System.Windows.Forms.TextBox();
+            this.textBox_VertexY = new System.Windows.Forms.TextBox();
+            this.label_XY = new System.Windows.Forms.Label();
+            this.textBox_EdgeX = new System.Windows.Forms.TextBox();
+            this.textBox_EdgeY = new System.Windows.Forms.TextBox();
             this.panel_Buttons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +90,7 @@
             this.btn_AddVertex.Name = "btn_AddVertex";
             this.btn_AddVertex.Tag = "Button";
             this.btn_AddVertex.UseVisualStyleBackColor = true;
+            this.btn_AddVertex.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_AddVertex_MouseUp);
             // 
             // panel_GraphGrid
             // 
@@ -114,10 +120,40 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Name = "label1";
             // 
+            // textBox_VertexX
+            // 
+            resources.ApplyResources(this.textBox_VertexX, "textBox_VertexX");
+            this.textBox_VertexX.Name = "textBox_VertexX";
+            // 
+            // textBox_VertexY
+            // 
+            resources.ApplyResources(this.textBox_VertexY, "textBox_VertexY");
+            this.textBox_VertexY.Name = "textBox_VertexY";
+            // 
+            // label_XY
+            // 
+            resources.ApplyResources(this.label_XY, "label_XY");
+            this.label_XY.Name = "label_XY";
+            // 
+            // textBox_EdgeX
+            // 
+            resources.ApplyResources(this.textBox_EdgeX, "textBox_EdgeX");
+            this.textBox_EdgeX.Name = "textBox_EdgeX";
+            // 
+            // textBox_EdgeY
+            // 
+            resources.ApplyResources(this.textBox_EdgeY, "textBox_EdgeY");
+            this.textBox_EdgeY.Name = "textBox_EdgeY";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label_XY);
+            this.Controls.Add(this.textBox_EdgeY);
+            this.Controls.Add(this.textBox_VertexY);
+            this.Controls.Add(this.textBox_EdgeX);
+            this.Controls.Add(this.textBox_VertexX);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_names);
             this.Controls.Add(this.panel_GraphGrid);
@@ -144,6 +180,11 @@
         private System.Windows.Forms.Panel panel_GraphGrid;
         private System.Windows.Forms.Label label_names;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox textBox_VertexX;
+        public System.Windows.Forms.TextBox textBox_VertexY;
+        private System.Windows.Forms.Label label_XY;
+        public System.Windows.Forms.TextBox textBox_EdgeX;
+        public System.Windows.Forms.TextBox textBox_EdgeY;
     }
 }
 

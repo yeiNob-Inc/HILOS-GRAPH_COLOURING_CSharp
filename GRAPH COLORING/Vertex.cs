@@ -25,10 +25,11 @@ namespace GRAPH_COLORING
             color = vertexColor;
             //this.xCenter = xCenter;
             //this.yCenter = yCenter;
-            radio = Grid.CellSize / 2;
+            // Que el radio sea la mitad del radio real para que el nodo sea pequeño.
+            radio = Grid.CellSize / 4;
 
-            xCenter = xVertex * Grid.CellSize + radio;
-            yCenter = xVertex * Grid.CellSize + radio;
+            xCenter = xVertex * Grid.CellSize + radio * 2;
+            yCenter = yVertex * Grid.CellSize + radio * 2;
         }
 
         public void addNeighbor(Edge edge)

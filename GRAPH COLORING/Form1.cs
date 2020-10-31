@@ -18,8 +18,8 @@ namespace GRAPH_COLORING
         public Form1()
         {
             InitializeComponent();
-            g = new Grid(panel_GraphGrid, 5);
-            graph = new Graph(5);
+            g = new Grid(panel_GraphGrid, 25);
+            graph = new Graph(25);
             //v = new Vertex(System.Drawing.Color.Beige, 3, 4);
         }
 
@@ -32,6 +32,12 @@ namespace GRAPH_COLORING
 
             //v = new Vertex(System.Drawing.Color.Red, 1, 2);
             //v.DrawVertex(e);
+        }
+
+        private void btn_AddVertex_MouseUp(object sender, MouseEventArgs e)
+        {
+            graph.AddVertex(int.Parse(textBox_VertexX.Text), int.Parse(textBox_VertexY.Text));
+            panel_GraphGrid.Invalidate(); // Dibujar el nuevo vértice.
         }
     }
 }
