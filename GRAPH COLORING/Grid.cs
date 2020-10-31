@@ -17,7 +17,9 @@ namespace GRAPH_COLORING
     class Grid
     {
         // Variables globales que guardarán los valores de la malla.
-        int cellSize, numCells; // El número de celdas también será global.
+        
+        public static int CellSize { get; set; } // El tamaño de la celda será estático.
+        public static int NumCells { get; set; } // El número de celdas también será global.
         bool isDrawOccupied = false; // Para saber si ya se pintaron las líneas.
         PaintEventArgs e; // Con el que se hará el dibujado.
 
@@ -25,9 +27,10 @@ namespace GRAPH_COLORING
          * Utilizamos un DELEGATE para poder pasar el método como parámetro.**/
         // private delegate void DivideGridThreads(object _startFinalIterator);
 
-        public Grid(int numCells)
+        public Grid(Panel grid, int _numCells)
         {
-            this.numCells = numCells;
+            NumCells = _numCells;
+            CellSize = grid.Size.Width / NumCells;
         }
 
         public void MakeGridThreads(System.Windows.Forms.Panel grid, PaintEventArgs e, int numThreads)
@@ -35,7 +38,7 @@ namespace GRAPH_COLORING
             Thread[] threads = new Thread[numThreads]; // Definimos el arreglo de hilos.
             this.e = e; // Asignamos el evento.
             // Definimos el tamaño de la celda compartido por los hilos.
-            cellSize = grid.Size.Width / numCells;
+            CellSize = grid.Size.Width / NumCells;
 
             createThreads(ref threads, numThreads);
         }
@@ -63,7 +66,7 @@ namespace GRAPH_COLORING
             // Este arreglo que se pasará como parámetro es provisional. Buscaré una mejor forma de implementarlo.
             int[] StartFinalIterator = new int[2];
             int actualIterator = 0; // Para guardarlo y pasarlo como parámetro.
-            int incrementIterator = numCells / numThreads; // La porción de líneas que le tocará a cada hilo
+            int incrementIterator = NumCells / numThreads; // La porción de líneas que le tocará a cada hilo
             for (int i = 0; i < numThreads; i++)
             {
                 StartFinalIterator[0] = actualIterator;// Iterador inicial
@@ -104,7 +107,7 @@ namespace GRAPH_COLORING
             // startIteratorFinalIterator[0] = Iterador inicial.
             // startIteratorFinalIterator[1] = Máximo iterador.
             Pen color = new Pen(Color.Black);
-            int x, y, finalCoord = numCells * cellSize;
+            int x, y, finalCoord = NumCells * CellSize;
             // Recibimos un arreglo de enteros como parámetro. Aquí lo convertimos.
             int[] startFinalIterator = (int[])_startFinalIterator;
             // Se hace un cast a int del parámetro, ya que solo podemos recibir 
@@ -115,7 +118,7 @@ namespace GRAPH_COLORING
             Graphics paint = e.Graphics;
             for (int i = (int)startFinalIterator[0] + 1; i < (int)startFinalIterator[1]; i++)
             {
-                x = y = i * cellSize;
+                x = y = i * CellSize;
 
                 /* e.Graphics.DrawLine(color, x1, y1, 2, y2); */
 
@@ -151,14 +154,14 @@ namespace GRAPH_COLORING
         /// <param name="e"></param>
         /// <param name="grid"></param>
         /// <param name="numCells"></param>
-        public static void MakeGridNoThreads(PaintEventArgs e, System.Windows.Forms.Panel grid, int numCells)
+        public static void MakeGridNoThreads(PaintEventArgs e)
         {
             Pen color = new Pen(Color.Black);
-            int cellSize = grid.Size.Width / numCells, x, y, finalCoord = numCells * cellSize;
+            int x, y, finalCoord = NumCells * CellSize;
             // finalCoord es la última coordenada, el último punto de la línea.
-            for (int i = 1; i < numCells; i++)
+            for (int i = 1; i < NumCells; i++)
             {
-                x = y = i * cellSize;
+                x = y = i * CellSize;
 
                 /* e.Graphics.DrawLine(color, x1, y1, 2, y2); */
 
