@@ -11,7 +11,7 @@ namespace GRAPH_COLORING
     class Vertex
     { 
         // Lista con los aristas adyacentes.
-        List<Edge> adjacentEdges;
+        public List<Edge> adjacentEdges { set; get; }
         public bool IsColored { get; set; }
         // El color del vértice se podrá obtener y asignar.
         public System.Drawing.Color color { set; get; }

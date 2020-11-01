@@ -36,17 +36,34 @@ namespace GRAPH_COLORING
 
         private void btn_AddVertex_MouseUp(object sender, MouseEventArgs e)
         {
-            graph.AddVertex(int.Parse(textBox_VertexX.Text), int.Parse(textBox_VertexY.Text));
-            panel_GraphGrid.Invalidate(); // Dibujar el nuevo vértice.
+            try
+            {
+                graph.AddVertex(int.Parse(textBox_VertexX.Text), int.Parse(textBox_VertexY.Text));
+                panel_GraphGrid.Invalidate(); // Dibujar el nuevo vértice.
+            }
+            catch
+            {
+                Form popUp = new PopUp_XYError();
+                popUp.ShowDialog();
+            }
         }
 
         private void btn_AddEdge_MouseUp(object sender, MouseEventArgs e)
         {
-            graph.AddEdge(int.Parse(textBox_EdgeV1X.Text),
-                          int.Parse(textBox_EdgeV1Y.Text),
-                          int.Parse(textBox_EdgeV2X.Text),
-                          int.Parse(textBox_EdgeV2Y.Text));
-            panel_GraphGrid.Invalidate(); // Dibujar el nuevo vértice.
+            try
+            {
+
+                graph.AddEdge(int.Parse(textBox_EdgeV1X.Text),
+                              int.Parse(textBox_EdgeV1Y.Text),
+                              int.Parse(textBox_EdgeV2X.Text),
+                              int.Parse(textBox_EdgeV2Y.Text));
+                panel_GraphGrid.Invalidate(); // Dibujar el nuevo vértice.
+            }
+            catch
+            {
+                Form popUp = new PopUp_XYError();
+                popUp.ShowDialog();
+            }
         }
     }
 }

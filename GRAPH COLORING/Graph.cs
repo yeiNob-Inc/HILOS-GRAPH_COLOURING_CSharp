@@ -23,7 +23,7 @@ namespace GRAPH_COLORING
         //Edge[,] edgeSet/*;*/
         // Matriz de adyacencia.
         //bool[,] adjacencyMatrix, vertexMatrix;
-        bool[,] vertexMatrix;
+        bool[,] vertexMatrix; // Si hay vértice o no.
         int graphSize;
         // Tomemos en cuenta que el grafo será de nxn.
         public Graph()
@@ -58,14 +58,23 @@ namespace GRAPH_COLORING
 
         public void AddEdge(int startVX, int startVY, int targetVX, int targetVY)
         {
-            //if (edgeSet[vertexSet[startVX, startVY], vertexSet[targetVX, targetVY])
-            //{
-            //    adjacencyMatrix[v1 - 1, v2 - 1] = true;
-            edgeSet.Add(new Edge(vertexSet[startVX - 1, startVY - 1], vertexSet[targetVX - 1, targetVY - 1]));
-            // Agregamos el último elemento como vecino.
-            vertexSet[startVX - 1, startVY - 1].addNeighbor(edgeSet.ElementAt(edgeSet.Count - 1));
-            //vertexSet[startVX, startVY].addNeighbor(vertexSet[targetVX, targetVY]);
-            //}
+            // Si se intenta hacer relaciones con vértices no existentes no deja.
+            if (vertexMatrix[startVX - 1, startVY - 1] && vertexMatrix[targetVX - 1, targetVY - 1])
+            {
+                //if (edgeSet[vertexSet[startVX, startVY], vertexSet[targetVX, targetVY])
+                //{
+                //    adjacencyMatrix[v1 - 1, v2 - 1] = true;
+                edgeSet.Add(new Edge(vertexSet[startVX - 1, startVY - 1], vertexSet[targetVX - 1, targetVY - 1]));
+                // Agregamos el último elemento como vecino.
+                vertexSet[startVX - 1, startVY - 1].addNeighbor(edgeSet.ElementAt(edgeSet.Count - 1));
+
+                // Hacer el proceso anterior para ser bidireccional
+                edgeSet.Add(new Edge(vertexSet[targetVX - 1, targetVY - 1], vertexSet[startVX - 1, startVY - 1]));
+                vertexSet[targetVX - 1, targetVY - 1].addNeighbor(new Edge(vertexSet[targetVX - 1, targetVY - 1], vertexSet[startVX - 1, startVY - 1]));
+
+                //vertexSet[startVX, startVY].addNeighbor(vertexSet[targetVX, targetVY]);
+                //}
+            }
 
         }
         // Método que dibujará todo el grafo: Vértices y relaciones (aristas).

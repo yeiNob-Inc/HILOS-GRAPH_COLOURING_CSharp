@@ -11,3 +11,4 @@ C:\Users\games\OneDrive - Universidad Autonoma de San Luis Potosi - UASLP\Docume
 C:\Users\games\OneDrive - Universidad Autonoma de San Luis Potosi - UASLP\Documents\UASLP\5to SEMESTRE\IGCA [8 - 9AM]\2P\TAREAS\HILOS-GRAPH_COLOURING_CSharp\GRAPH COLORING\bin\Debug\es-MX\GRAPH COLORING.resources.dll
 C:\Users\games\OneDrive - Universidad Autonoma de San Luis Potosi - UASLP\Documents\UASLP\5to SEMESTRE\IGCA [8 - 9AM]\2P\TAREAS\HILOS-GRAPH_COLOURING_CSharp\GRAPH COLORING\obj\Debug\GRAPH_COLORING.Form1.es-MX.resources
 C:\Users\games\OneDrive - Universidad Autonoma de San Luis Potosi - UASLP\Documents\UASLP\5to SEMESTRE\IGCA [8 - 9AM]\2P\TAREAS\HILOS-GRAPH_COLOURING_CSharp\GRAPH COLORING\obj\Debug\es-MX\GRAPH COLORING.resources.dll
+C:\Users\games\OneDrive - Universidad Autonoma de San Luis Potosi - UASLP\Documents\UASLP\5to SEMESTRE\IGCA [8 - 9AM]\2P\TAREAS\HILOS-GRAPH_COLOURING_CSharp\GRAPH COLORING\obj\Debug\GRAPH_COLORING.PopUp_XYError.resources
