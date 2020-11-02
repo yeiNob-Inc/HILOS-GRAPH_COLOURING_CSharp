@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GRAPH_COLORING
@@ -14,31 +7,20 @@ namespace GRAPH_COLORING
     public partial class Form1 : Form
     {
         Graph graph;
-        //Vertex v;
         public Form1()
         {
             InitializeComponent();
             new Grid(panel_GraphGrid, 10);
             graph = new Graph();
             label_RandomGraph.Text += "\n" + graph.graphMatrix.Length;
-            //v = new Vertex(System.Drawing.Color.Beige, 3, 4);
         }
 
         private void panel_GraphGrid_Paint(object sender, PaintEventArgs e)
         {
             // Siempre que se minimiza la ventana o se hace algún movimiento, hay que redibujar la malla.
             Grid.MakeGridNoThreads(e);
-
-
             //g.MakeGridThreads(panel_GraphGrid, e, 1);
-            //graph.DrawAllVertex(e);
-
-
             graph.DrawGraph(e);
-
-
-            //v = new Vertex(System.Drawing.Color.Red, 1, 2);
-            //v.DrawVertex(e);
         }
 
         // MÉTODO PARA QUE AL PRESIONAR ENTER SE INGRESEN LOS DATOS DEL VÉRTICE.
@@ -131,19 +113,6 @@ namespace GRAPH_COLORING
                 //c.graphColoring(graph.graphMatrix, 2);
                 panel_GraphGrid.Invalidate();
             }
-            //graph.SetVertexColored(false);
-            //List<Color> colors = new List<Color>();
-            //colors.Add(Color.Red);
-            //colors.Add(Color.Blue);
-            //Coloring graphColoring = new Coloring(colors, graph.NumberOfVertices);
-            //Random r = new Random();
-            //while (!graphColoring.SetColors(graph.VertexPrintable.ElementAt(0)))
-            //{
-            //    // Si no hay soluciòn, agregamos un nuevo color.
-            //    graphColoring.Colors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
-            //}
-            //panel_GraphGrid.Invalidate(); // Dibujar los vértices.
-
         }
 
         private void btn_EraseGraph_Click(object sender, EventArgs e)
