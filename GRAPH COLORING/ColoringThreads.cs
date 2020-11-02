@@ -52,7 +52,7 @@ namespace GRAPH_COLORING
                         threads[threadIndex].Start(ijValues);
                         threadIndex++;
                         //while (!threads[threadIndex].IsAlive) ;// Para que se inicie el hilo y empiece.
-                        Thread.Sleep(200);
+                        //Thread.Sleep(200);
                     }
 
             //sync.SignalAndWait(); // Espera a que todos terminen.

@@ -58,6 +58,7 @@
             this.label_ColorNumber = new System.Windows.Forms.Label();
             this.label_VertexNumber = new System.Windows.Forms.Label();
             this.label_EdgeNumber = new System.Windows.Forms.Label();
+            this.btn_FillGraph = new System.Windows.Forms.Button();
             panel1 = new System.Windows.Forms.Panel();
             panel1.SuspendLayout();
             this.panel_Buttons.SuspendLayout();
@@ -81,6 +82,7 @@
             // panel_Buttons
             // 
             resources.ApplyResources(this.panel_Buttons, "panel_Buttons");
+            this.panel_Buttons.Controls.Add(this.btn_FillGraph);
             this.panel_Buttons.Controls.Add(this.btn_CreateRandomGraph);
             this.panel_Buttons.Controls.Add(this.btn_EraseGraph);
             this.panel_Buttons.Controls.Add(this.btn_EraseVertex);
@@ -257,6 +259,13 @@
             resources.ApplyResources(this.label_EdgeNumber, "label_EdgeNumber");
             this.label_EdgeNumber.Name = "label_EdgeNumber";
             // 
+            // btn_FillGraph
+            // 
+            resources.ApplyResources(this.btn_FillGraph, "btn_FillGraph");
+            this.btn_FillGraph.Name = "btn_FillGraph";
+            this.btn_FillGraph.UseVisualStyleBackColor = true;
+            this.btn_FillGraph.Click += new System.EventHandler(this.btn_FillGraph_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -327,6 +336,7 @@
         public System.Windows.Forms.Label label_VertexNumber;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label_EdgeNumber;
+        private System.Windows.Forms.Button btn_FillGraph;
     }
 }
 

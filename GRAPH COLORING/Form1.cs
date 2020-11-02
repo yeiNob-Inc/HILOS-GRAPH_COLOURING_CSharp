@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace GRAPH_COLORING
         public Form1()
         {
             InitializeComponent();
-            new Grid(panel_GraphGrid, 5);
+            new Grid(panel_GraphGrid, 10);
             graph = new Graph();
             label_RandomGraph.Text += "\n" + graph.graphMatrix.Length;
             //v = new Vertex(System.Drawing.Color.Beige, 3, 4);
@@ -27,9 +28,15 @@ namespace GRAPH_COLORING
         {
             // Siempre que se minimiza la ventana o se hace algún movimiento, hay que redibujar la malla.
             Grid.MakeGridNoThreads(e);
+
+
             //g.MakeGridThreads(panel_GraphGrid, e, 1);
             //graph.DrawAllVertex(e);
+
+
             graph.DrawGraph(e);
+
+
             //v = new Vertex(System.Drawing.Color.Red, 1, 2);
             //v.DrawVertex(e);
         }
@@ -108,13 +115,18 @@ namespace GRAPH_COLORING
 
         private void btn_GraphColoring_Click(object sender, EventArgs e)
         {
-            
             if (graph.NumberOfVertices > 1)
             {
                 Coloring c = new Coloring(graph);
+                //ColoringThreads cThreads = new ColoringThreads(graph);
+                // Con este se mide el tiempo de manera precisa.
+                Stopwatch time = new Stopwatch();
+                time.Start();
                 c.GraphColoring(this);
-                //ColoringThreads c = new ColoringThreads(graph);
-                //c.GraphColoring();
+                
+                //c.GraphColoring(this);
+                time.Stop();
+                
                 //Coloring c = new Coloring(3, graph.VertexSet);
                 //c.graphColoring(graph.graphMatrix, 2);
                 panel_GraphGrid.Invalidate();
@@ -151,9 +163,12 @@ namespace GRAPH_COLORING
             {
                 //Graph graph = new Graph();
                 Random r = new Random();
+                int vertexNum = int.Parse(textBox_RandomGraph.Text);
                 //int numEdges = 0; // Número de aristas que se crearán
                 // Crear vértices.
-                for (int i = 0; i < int.Parse(textBox_RandomGraph.Text); i++)
+                if (vertexNum > graph.graphMatrix.Length)
+                    vertexNum = graph.graphMatrix.Length;
+                for (int i = 0; i < vertexNum; i++)
                     graph.AddVertex(r.Next(Grid.NumCells), r.Next(Grid.NumCells));
                 // Crear aristas.
                 for (int i = 0; i < Grid.NumCells; i++)
@@ -196,6 +211,22 @@ namespace GRAPH_COLORING
                     Form popUp = new PopUp_XYError();
                     popUp.ShowDialog();
                 }
+        }
+
+        private void btn_FillGraph_Click(object sender, EventArgs e)
+        {
+            Random r = new Random();
+            for(int i = 0; i < graph.graphMatrix.GetLength(0); i++)
+                for (int j = 0; j < graph.graphMatrix.GetLength(1); j++)
+                    graph.AddVertex(i, j);
+            // Crear aristas.
+            for (int i = 0; i < Grid.NumCells; i++)
+                for (int j = 0; j < Grid.NumCells; j++)
+                {
+                    graph.AddEdge(i, j, r.Next(Grid.NumCells), r.Next(Grid.NumCells),
+                                    label_EdgeList);
+                }
+            panel_GraphGrid.Invalidate();
         }
     }
 }
