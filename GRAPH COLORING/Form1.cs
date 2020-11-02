@@ -20,6 +20,7 @@ namespace GRAPH_COLORING
             InitializeComponent();
             g = new Grid(panel_GraphGrid, 10);
             graph = new Graph();
+            label_RandomGraph.Text += "\n" + graph.graphMatrix.Length;
             //v = new Vertex(System.Drawing.Color.Beige, 3, 4);
         }
 
@@ -77,6 +78,8 @@ namespace GRAPH_COLORING
             {
                 graph.AddVertex(int.Parse(textBox_VertexX.Text), int.Parse(textBox_VertexY.Text));
                 panel_GraphGrid.Invalidate(); // Dibujar el nuevo vértice.
+                label_NumberOfVertices.Text = "NÚMERO ACTUAL\nDE VÉRTICES:\n" + graph.NumberOfVertices;
+
             }
             catch // Si hay una excepción por espacios en blanco, letras, etc., sale el Pop up.
             {
@@ -123,6 +126,41 @@ namespace GRAPH_COLORING
             //}
             //panel_GraphGrid.Invalidate(); // Dibujar los vértices.
 
+        }
+
+        private void btn_EraseGraph_Click(object sender, EventArgs e)
+        {
+            // Para borrar los objetos del grafo, hay que usar Dispose, pero
+            // hay que implementarlo manualmente con la interfaz.
+            // graph.Dispose();
+            // Crear un nuevo grafo sustituyendo al anterior para borrar el anterior sin hacerlo manualmente.
+            //Graph graph = new Graph();
+            panel_GraphGrid.Invalidate();
+        }
+
+        // Podría crear un grafo aleatorio con hilos.
+        private void btn_CreateRandomGraph_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Graph graph = new Graph();
+                Random r = new Random();
+                // Crear vértices.
+                for (int i = 0; i < int.Parse(textBox_RandomGraph.Text); i++)
+                    graph.AddVertex(r.Next(Grid.NumCells), r.Next(Grid.NumCells));
+                // Crear aristas.
+                for (int i = 0; i < Grid.NumCells; i++)
+                    for (int j = 0; j < Grid.NumCells; j++)
+                        graph.AddEdge(r.Next(Grid.NumCells), r.Next(Grid.NumCells),
+                                    r.Next(Grid.NumCells), r.Next(Grid.NumCells),
+                                    label_EdgeList);
+                panel_GraphGrid.Invalidate();
+            }
+            catch
+            {
+                Form popUp = new PopUp_XYError();
+                popUp.ShowDialog();
+            }
         }
     }
 }

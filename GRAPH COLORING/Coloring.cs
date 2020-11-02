@@ -18,6 +18,7 @@ namespace GRAPH_COLORING
         {
             List<Color> colors = new List<Color>() ; // Lista de colores. Se pueden ir agregando más.
             Random r = new Random();
+            // Agregamos un color para empezar.
             colors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
             for (int i = 0; i < graph.graphMatrix.GetLength(0); i++)
                 for (int j = 0, colorIndex = 0; j < graph.graphMatrix.GetLength(1); j++)
@@ -46,6 +47,9 @@ namespace GRAPH_COLORING
                         SetNeighborNotColorable(ref graph.VertexSet[i, j], colorIndex);
                     }
         }
+
+        // Uso del Graph Coloring con Hilos.
+
         // Establecer a los vecinos que no pueden colorear con el color actual.
         private void SetNeighborNotColorable(ref Vertex v, int colorIndex)
         {

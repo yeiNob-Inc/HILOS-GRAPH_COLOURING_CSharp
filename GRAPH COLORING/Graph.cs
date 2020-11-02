@@ -97,10 +97,10 @@ namespace GRAPH_COLORING
             // Dibuja los aristas abajo de los vértices para que no se vean por encima de todo.
 
             DrawAllEdges(e);
-            DrawAllVertex(e);
+            DrawAllVertices(e);
         }
         // Método que dibuja los vértices desde la matriz.
-        public void DrawAllVertex(PaintEventArgs e)
+        public void DrawAllVertices(PaintEventArgs e)
         {
             for (int i = 0; i < graphMatrix.GetLength(0); i++)
                 for (int j = 0; j < graphMatrix.GetLength(1); j++)
