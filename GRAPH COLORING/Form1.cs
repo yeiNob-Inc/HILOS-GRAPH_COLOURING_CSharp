@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -151,22 +152,12 @@ namespace GRAPH_COLORING
                 for (int i = 0; i < int.Parse(textBox_RandomGraph.Text); i++)
                     graph.AddVertex(r.Next(Grid.NumCells), r.Next(Grid.NumCells));
                 // Crear aristas.
-                
-                //for (int i = 0; i < Grid.NumCells; i++)
-                //    for (int j = 0; j < Grid.NumCells; j++)
-                //    {
-                //        // El número de aristas a crear puede ir del 1 al número de vértices menos el mismo.
-                //        numEdges = r.Next(1, graph.NumberOfVertices - 1);
-                //        if(graph.graphMatrix[i, j]) // Si hay un elemento en la matriz vamos a relacionarlo.
-                //            // Hacemos un recorrido por todos los vértices, y si hay uno, hay que relacionarlo.
-                //            for(int k = 0, actualEdge = 1; k < Grid.NumCells && actualEdge < numEdges; k++)
-                //                for(int h = 0; h < Grid.NumCells && actualEdge < numEdges; h++)
-                //                    if(graph.graphMatrix[k, h]) // Si sí hay vértice, relacionarlo.
-                //                    {
-                //                        graph.AddEdge(i, j, k, h, label_EdgeList);
-                //                        actualEdge++;
-                //                    }
-                //    }
+                for(int i = 0; i < Grid.NumCells; i++)
+                    for(int j = 0; j < Grid.NumCells; j++)
+                    {
+                        graph.AddEdge(i, j, r.Next(Grid.NumCells), r.Next(Grid.NumCells),
+                                        label_EdgeList);
+                    }
                 panel_GraphGrid.Invalidate();
         }
             catch
