@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.Panel panel1;
             this.panel_Buttons = new System.Windows.Forms.Panel();
             this.btn_EraseGraph = new System.Windows.Forms.Button();
             this.btn_EraseVertex = new System.Windows.Forms.Button();
@@ -49,7 +50,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label_EdgeList = new System.Windows.Forms.Label();
+            panel1 = new System.Windows.Forms.Panel();
             this.panel_Buttons.SuspendLayout();
+            panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Buttons
@@ -182,10 +186,26 @@
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
             // 
+            // panel1
+            // 
+            panel1.BackColor = System.Drawing.Color.SeaShell;
+            panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panel1.Controls.Add(this.label_EdgeList);
+            panel1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            resources.ApplyResources(panel1, "panel1");
+            panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            panel1.Name = "panel1";
+            // 
+            // label_EdgeList
+            // 
+            resources.ApplyResources(this.label_EdgeList, "label_EdgeList");
+            this.label_EdgeList.Name = "label_EdgeList";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(panel1);
             this.Controls.Add(this.textBox_EdgeV2Y);
             this.Controls.Add(this.textBox_EdgeV2X);
             this.Controls.Add(this.label5);
@@ -208,6 +228,8 @@
             this.Name = "Form1";
             this.panel_Buttons.ResumeLayout(false);
             this.panel_Buttons.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,6 +256,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label label_EdgeList;
     }
 }
 

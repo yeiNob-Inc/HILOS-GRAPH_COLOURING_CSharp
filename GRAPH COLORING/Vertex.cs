@@ -15,10 +15,13 @@ namespace GRAPH_COLORING
         public bool IsColored { get; set; }
         // El color del vértice se podrá obtener y asignar.
         public System.Drawing.Color color { set; get; }
-        private int xVertex, yVertex; // Para saber el centro de x y y.
         public float XCenter { set; get; }
         public float YCenter { set; get; }
         public float radio;
+        // Número de vértice en x y y.
+
+        public int xVertex { set; get; }
+        public int yVertex { set; get; }
         // Recibimos las coordenadas del vértice.
         public Vertex(System.Drawing.Color vertexColor, int xVertex, int yVertex)
         {
@@ -29,7 +32,8 @@ namespace GRAPH_COLORING
             //this.yCenter = yCenter;
             // Que el radio sea la mitad del radio real para que el nodo sea pequeño.
             radio = Grid.CellSize / 4;
-
+            this.xVertex = xVertex;
+            this.yVertex = yVertex;
             XCenter = xVertex * Grid.CellSize + radio * 2;
             YCenter = yVertex * Grid.CellSize + radio * 2;
         }

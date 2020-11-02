@@ -56,7 +56,7 @@ namespace GRAPH_COLORING
                 graph.AddEdge(int.Parse(textBox_EdgeV1X.Text),
                               int.Parse(textBox_EdgeV1Y.Text),
                               int.Parse(textBox_EdgeV2X.Text),
-                              int.Parse(textBox_EdgeV2Y.Text));
+                              int.Parse(textBox_EdgeV2Y.Text), label_EdgeList);
                 panel_GraphGrid.Invalidate(); // Dibujar el nuevo vértice.
             }
             catch

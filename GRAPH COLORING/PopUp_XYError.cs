@@ -19,7 +19,7 @@ namespace GRAPH_COLORING
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close(); // Cerramos el formulario.
+            Close(); // Cerramos el formulario al aceptar.
         }
     }
 }
