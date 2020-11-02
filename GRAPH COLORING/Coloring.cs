@@ -23,6 +23,7 @@ namespace GRAPH_COLORING
         {
             this.Colors = colors;
             this.numberOfVertices = N;
+            colorCount = 0;
 
         }
 

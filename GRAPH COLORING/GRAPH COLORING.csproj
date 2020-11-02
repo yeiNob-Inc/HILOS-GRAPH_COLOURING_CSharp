@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coloring.cs" />
+    <Compile Include="CÓDIGOS GRAPH COLORING [OTROS LENGUAJES]\GC_mColoringProblem_Backtracking_CSharp.cs" />
     <Compile Include="Edge.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

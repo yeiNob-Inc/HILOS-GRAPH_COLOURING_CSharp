@@ -18,14 +18,14 @@ namespace GRAPH_COLORING
     {
         // Lista de vèrtices para imprimirlos.
         public List<Vertex> VertexPrintable { get; set; }
-        Vertex[,] vertexSet;
+        Vertex[,] vertexSet; // Matriz con los vértices.
         List<Edge> edgeSet;
 
         // Matriz en donde un elemento guardará el vértice con el que se relaciona y viceversa.
         //Edge[,] edgeSet/*;*/
         // Matriz de adyacencia.
-        //bool[,] adjacencyMatrix, vertexMatrix;
-        private readonly bool[,] vertexMatrix; // Si hay vértice o no.
+        //bool[,] adjacencyMatrix, graphMatrix;
+        private readonly bool[,] graphMatrix; // Si hay vértice o no.
         private readonly int graphSize;
         public int NumberOfVertices { get; set; }
         // Tomemos en cuenta que el grafo será de nxn.
@@ -35,9 +35,10 @@ namespace GRAPH_COLORING
             edgeSet = new List<Edge>();
             VertexPrintable = new List<Vertex>();
             vertexSet = new Vertex[graphSize, graphSize];
-            vertexMatrix = new bool[graphSize, graphSize];
+            graphMatrix = new bool[graphSize, graphSize];
             NumberOfVertices = 0; // Indicar que aún no hay vértices.
-            InitializeMatrix(ref vertexMatrix);
+            graphMatrix.Initialize(); // Inicializar la matriz.
+            InitializeMatrix(ref graphMatrix);
             //vertexSet.Add(new Vertex(System.Drawing.Color.Beige, 3, 4));
             //vertexSet.Add(new Vertex(System.Drawing.Color.Red, 1, 2));
         }
@@ -45,13 +46,13 @@ namespace GRAPH_COLORING
         // Método que agrega un vértice.
         public void AddVertex(int v1, int v2){
             // Que el vértice esté dentro del rango y no exista aún.
-            if (v1 >= 0 && v1 < graphSize && v2 >= 0 && v2 < graphSize && !vertexMatrix[v1, v2])
+            if (v1 >= 0 && v1 < graphSize && v2 >= 0 && v2 < graphSize && !graphMatrix[v1, v2])
             {
                 //vertexPrintable.Add(new Vertex(System.Drawing.Color.Transparent, v1, v2));
                 // No sé si de esta forma tengan la misma dirección de memoria.
                 VertexPrintable.Add(vertexSet[v1, v2] = new Vertex(System.Drawing.Color.Transparent, v1, v2));
 
-                vertexMatrix[v1, v2] = true;
+                graphMatrix[v1, v2] = true;
                 NumberOfVertices++; // Aumentar el número de vértices.
             }
             
@@ -68,7 +69,7 @@ namespace GRAPH_COLORING
             Edge e = new Edge(vertexSet[startVX, startVY], vertexSet[targetVX, targetVY]);
             // Si se intenta hacer relaciones con vértices no existentes no deja.
             // Si existen los vértices a relacionar, hacer el proceso.
-            if (vertexMatrix[startVX, startVY] && vertexMatrix[targetVX, targetVY]
+            if (graphMatrix[startVX, startVY] && graphMatrix[targetVX, targetVY]
                 && !EdgeExist(e))
             {
                 edgeSet.Add(e);

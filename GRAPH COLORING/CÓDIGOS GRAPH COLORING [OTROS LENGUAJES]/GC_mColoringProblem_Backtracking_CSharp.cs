@@ -2,8 +2,13 @@
  https://www.geeksforgeeks.org/m-coloring-problem-backtracking-5/
 
 	Method 2: Backtracking.
-Approach: The idea is to assign colors one by one to different vertices, starting from the vertex 0. Before assigning a color, check for safety by considering already assigned colors to the adjacent vertices i.e check if the adjacent vertices have the same color or not. If there is any color assignment that does not violate the conditions, mark the color assignment as part of the solution. If no assignment of color is possible then backtrack and return false.
-Algorithm: 
+Approach: The idea is to assign colors one by one to different vertices,
+starting from the vertex 0. Before assigning a color, check for safety by
+considering already assigned colors to the adjacent vertices i.e check if the
+adjacent vertices have the same color or not. If there is any color assignment
+that does not violate the conditions, mark the color assignment as part of the
+solution. If no assignment of color is possible then backtrack and return false.
+Algorithm:
 
 Create a recursive function that takes the graph, current index, number of vertices and output color array.
 If the current index is equal to number of vertices. Print the color configuration in output array.
@@ -15,7 +20,7 @@ filter_none
  */
 
 
-/* C# program for solution of M Coloring problem 
+/* C# program for solution of M Coloring problem
 using backtracking */
 using System;
 
@@ -24,7 +29,7 @@ class GFG
 	readonly int V = 4;
 	int[] color;
 
-	/* A utility function to check if the current 
+	/* A utility function to check if the current
 	color assignment is safe for vertex v */
 	bool isSafe(int v, int[,] graph,
 				int[] color, int c)
@@ -35,50 +40,50 @@ class GFG
 		return true;
 	}
 
-	/* A recursive utility function to solve m 
+	/* A recursive utility function to solve m
 	coloring problem */
 	bool graphColoringUtil(int[,] graph, int m,
 						int[] color, int v)
 	{
-		/* base case: If all vertices are assigned 
+		/* base case: If all vertices are assigned
 		a color then return true */
 		if (v == V)
 			return true;
 
-		/* Consider this vertex v and try different 
+		/* Consider this vertex v and try different
 		colors */
 		for (int c = 1; c <= m; c++)
 		{
-			/* Check if assignment of color c to v 
+			/* Check if assignment of color c to v
 			is fine*/
 			if (isSafe(v, graph, color, c))
 			{
 				color[v] = c;
 
-				/* recur to assign colors to rest 
+				/* recur to assign colors to rest
 				of the vertices */
 				if (graphColoringUtil(graph, m,
 									color, v + 1))
 					return true;
 
-				/* If assigning color c doesn't lead 
+				/* If assigning color c doesn't lead
 				to a solution then remove it */
 				color[v] = 0;
 			}
 		}
 
-		/* If no color can be assigned to this vertex 
+		/* If no color can be assigned to this vertex
 		then return false */
 		return false;
 	}
 
-	/* This function solves the m Coloring problem using 
-	Backtracking. It mainly uses graphColoringUtil() 
-	to solve the problem. It returns false if the m 
-	colors cannot be assigned, otherwise return true 
-	and prints assignments of colors to all vertices. 
-	Please note that there may be more than one 
-	solutions, this function prints one of the 
+	/* This function solves the m Coloring problem using
+	Backtracking. It mainly uses graphColoringUtil()
+	to solve the problem. It returns false if the m
+	colors cannot be assigned, otherwise return true
+	and prints assignments of colors to all vertices.
+	Please note that there may be more than one
+	solutions, this function prints one of the
 	feasible solutions.*/
 	bool graphColoring(int[,] graph, int m)
 	{
@@ -112,25 +117,25 @@ class GFG
 	}
 
 	// Driver Code
-	public static void Main(String[] args)
-	{
-		GFG Coloring = new GFG();
+	//public static void Main(String[] args)
+	//{
+	//	GFG Coloring = new GFG();
 
-		/* Create following graph and test whether it is 
-		3 colorable 
-		(3)---(2) 
-		| / | 
-		| / | 
-		| / | 
-		(0)---(1) 
-		*/
-		int[,] graph = { { 0, 1, 1, 1 },
-						{ 1, 0, 1, 0 },
-						{ 1, 1, 0, 1 },
-						{ 1, 0, 1, 0 } };
-		int m = 3; // Number of colors
-		Coloring.graphColoring(graph, m);
-	}
+	//	/* Create following graph and test whether it is
+	//	3 colorable
+	//	(3)---(2)
+	//	| / |
+	//	| / |
+	//	| / |
+	//	(0)---(1)
+	//	*/
+	//	int[,] graph = { { 0, 1, 1, 1 },
+	//					{ 1, 0, 1, 0 },
+	//					{ 1, 1, 0, 1 },
+	//					{ 1, 0, 1, 0 } };
+	//	int m = 3; // Number of colors
+	//	Coloring.graphColoring(graph, m);
+	//}
 }
 
 // This code is contributed by PrinciRaj1992
