@@ -53,6 +53,14 @@ namespace GRAPH_COLORING
                 // Lo mismo pasa con las líneas en x. La y no cambia, pero las x van del 0 al xFinal.
                 e.Graphics.DrawLine(color, 0, y, finalCoord, y);
             }
+            String coordinates;
+            Font drawFont = new Font("Arial", CellSize / 10);
+            SolidBrush drawBrush = new SolidBrush(Color.Black);
+            for (int i = 0; i < NumCells; i++)
+                for (int j = 0; j < NumCells; j++) {
+                    coordinates = "(" + i + ", " + j + ")";
+                    e.Graphics.DrawString(coordinates, drawFont, drawBrush, (float)i * CellSize, (float)j * CellSize);
+                }
         }
 
         public void MakeGridThreads(System.Windows.Forms.Panel grid, PaintEventArgs e, int numThreads)
