@@ -18,7 +18,7 @@ namespace GRAPH_COLORING
         public Form1()
         {
             InitializeComponent();
-            g = new Grid(panel_GraphGrid, 5);
+            g = new Grid(panel_GraphGrid, 10);
             graph = new Graph();
             //v = new Vertex(System.Drawing.Color.Beige, 3, 4);
         }
@@ -64,6 +64,18 @@ namespace GRAPH_COLORING
                 Form popUp = new PopUp_XYError();
                 popUp.ShowDialog();
             }
+        }
+        // Si se presiona Enter se ingresa la información.
+
+        private void textBox_VertexX_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if (e.KeyCode == Keys.Enter)
+            //    btn_AddVertex_MouseUp(sender);
+        }
+        // Método para agregar un vértice desde el form.
+        private void AddVertex()
+        {
+
         }
     }
 }

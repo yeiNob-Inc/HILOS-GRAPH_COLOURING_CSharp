@@ -451,13 +451,13 @@ IGCA [2020-2021/A]</value>
     <value>12</value>
   </data>
   <data name="textBox_VertexX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 175</value>
+    <value>589, 175</value>
   </data>
   <data name="textBox_VertexX.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 20</value>
   </data>
   <data name="textBox_VertexX.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;textBox_VertexX.Name" xml:space="preserve">
     <value>textBox_VertexX</value>
@@ -472,13 +472,13 @@ IGCA [2020-2021/A]</value>
     <value>11</value>
   </data>
   <data name="textBox_VertexY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>603, 175</value>
+    <value>614, 175</value>
   </data>
   <data name="textBox_VertexY.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 20</value>
   </data>
   <data name="textBox_VertexY.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;textBox_VertexY.Name" xml:space="preserve">
     <value>textBox_VertexY</value>
@@ -496,7 +496,7 @@ IGCA [2020-2021/A]</value>
     <value>True</value>
   </data>
   <data name="label_XY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 159</value>
+    <value>589, 159</value>
   </data>
   <data name="label_XY.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -520,7 +520,7 @@ IGCA [2020-2021/A]</value>
     <value>7</value>
   </data>
   <data name="textBox_EdgeV1X.Location" type="System.Drawing.Point, System.Drawing">
-    <value>553, 224</value>
+    <value>564, 224</value>
   </data>
   <data name="textBox_EdgeV1X.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 20</value>
@@ -541,13 +541,13 @@ IGCA [2020-2021/A]</value>
     <value>10</value>
   </data>
   <data name="textBox_EdgeV1Y.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 224</value>
+    <value>589, 224</value>
   </data>
   <data name="textBox_EdgeV1Y.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 20</value>
   </data>
   <data name="textBox_EdgeV1Y.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;textBox_EdgeV1Y.Name" xml:space="preserve">
     <value>textBox_EdgeV1Y</value>
@@ -562,13 +562,13 @@ IGCA [2020-2021/A]</value>
     <value>8</value>
   </data>
   <data name="textBox_EdgeV2Y.Location" type="System.Drawing.Point, System.Drawing">
-    <value>628, 224</value>
+    <value>639, 224</value>
   </data>
   <data name="textBox_EdgeV2Y.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 20</value>
   </data>
   <data name="textBox_EdgeV2Y.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;textBox_EdgeV2Y.Name" xml:space="preserve">
     <value>textBox_EdgeV2Y</value>
@@ -583,13 +583,13 @@ IGCA [2020-2021/A]</value>
     <value>1</value>
   </data>
   <data name="textBox_EdgeV2X.Location" type="System.Drawing.Point, System.Drawing">
-    <value>603, 224</value>
+    <value>614, 224</value>
   </data>
   <data name="textBox_EdgeV2X.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 20</value>
   </data>
   <data name="textBox_EdgeV2X.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;textBox_EdgeV2X.Name" xml:space="preserve">
     <value>textBox_EdgeV2X</value>
@@ -610,7 +610,7 @@ IGCA [2020-2021/A]</value>
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>553, 208</value>
+    <value>564, 208</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -640,7 +640,7 @@ IGCA [2020-2021/A]</value>
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>565, 200</value>
+    <value>576, 200</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 13</value>
@@ -670,7 +670,7 @@ IGCA [2020-2021/A]</value>
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>602, 208</value>
+    <value>613, 208</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -700,7 +700,7 @@ IGCA [2020-2021/A]</value>
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>614, 200</value>
+    <value>625, 200</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 13</value>
@@ -726,6 +726,45 @@ IGCA [2020-2021/A]</value>
   <metadata name="panel1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <data name="panel1.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label_EdgeList.Name" xml:space="preserve">
+    <value>label_EdgeList</value>
+  </data>
+  <data name="&gt;&gt;label_EdgeList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_EdgeList.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label_EdgeList.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8pt</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>553, 251</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 144</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label_EdgeList.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -751,30 +790,6 @@ IGCA [2020-2021/A]</value>
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label_EdgeList.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8pt</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>553, 251</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 144</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

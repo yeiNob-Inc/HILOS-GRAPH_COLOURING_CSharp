@@ -100,37 +100,16 @@ namespace GRAPH_COLORING
         // Método para ver si los Edges que se quieren meter ya existen.
         private bool EdgeExist(Edge edge)
         {
+            // Si la lista sí tiene elementos (Edges)
             if(edgeSet.Count > 0)
+                // Recorrer toda la lista y buscar si ya existe ese Edge.
                 for(int i = 0; i < edgeSet.Count; i++)
                     if ((edgeSet.ElementAt(i).startVertex == edge.startVertex
                             || edgeSet.ElementAt(i).startVertex == edge.targetVertex)
                             && (edgeSet.ElementAt(i).targetVertex == edge.startVertex
                             || edgeSet.ElementAt(i).targetVertex == edge.targetVertex))
-                        return true;
-            return false;
-            //return edgeSet.ElementAt(i);
-
-            //int i = 0;
-            ////bool isThereEdges = false; // Variable local para ver si ya existen edges o no.
-            //if (edgeSet.Count > 1)
-            //{
-            //    //isThereEdges = true; // Sí existe más de un Edge.
-            //    // Si se encuentra el vértice inicial o final que se ingresó con
-            //    // uno que esté en la lista de Edges, regresar true.
-            //    for (; i < edgeSet.Count; i++)
-            //        if ((edgeSet.ElementAt(i).startVertex == startVertex
-            //            || edgeSet.ElementAt(i).startVertex == targetVertex)
-            //            && (edgeSet.ElementAt(i).targetVertex == startVertex
-            //            || edgeSet.ElementAt(i).targetVertex == targetVertex))
-            //            return true;
-            //    /* Si se recorrió toda la lista y se encontró en la 
-            //    última posición (porque el vértice a este punto ya se terminó),
-            //    entonces el iterador habrá llegado a su máximo y regresamos false;*/
-            //    return false;
-            //    //return (i >= edgeSet.Count - 1); // Esto si existen más de un Edge.
-            //}
-            //else
-            //    return false; // Regresar falso si no existen los edges.
+                        return true; // True si se encontró.
+            return false; // False si no se salió en la condición anterior (no encontró nada).
         }
         // Método que inicializa la mariz de adyacencia.
         private void InitializeMatrix(ref bool[,] matrix)

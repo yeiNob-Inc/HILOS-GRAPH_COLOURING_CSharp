@@ -135,11 +135,13 @@
             // 
             resources.ApplyResources(this.textBox_VertexX, "textBox_VertexX");
             this.textBox_VertexX.Name = "textBox_VertexX";
+            this.textBox_VertexX.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_VertexX_KeyDown);
             // 
             // textBox_VertexY
             // 
             resources.ApplyResources(this.textBox_VertexY, "textBox_VertexY");
             this.textBox_VertexY.Name = "textBox_VertexY";
+            this.textBox_VertexY.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_VertexX_KeyDown);
             // 
             // label_XY
             // 
@@ -188,11 +190,11 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = System.Drawing.Color.SeaShell;
             panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             panel1.Controls.Add(this.label_EdgeList);
             panel1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            resources.ApplyResources(panel1, "panel1");
             panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             panel1.Name = "panel1";
             // 
