@@ -13,14 +13,14 @@ namespace GRAPH_COLORING
         // La lista de colores será compartida.
         List<Color> colors = new List<Color>(); // Lista de colores. Se pueden ir agregando más.
         Graph graph;
-        static Barrier sync; // Para que no regrese al form sin haber terminado los hilos.
+        //static Barrier sync; // Para que no regrese al form sin haber terminado los hilos.
         // Uso del Graph Coloring con Hilos.
         // El procedimiento debe ser secuencial porque los de adelante deben saber los colores del de atrás.
         public ColoringThreads(Graph graph)
         {
             this.graph = graph;
         }
-        public void GraphColoring(int numberOfThreads)
+        public void GraphColoring()
         {
             Random r = new Random();
             // Agregamos dos colores para empezar.
@@ -28,7 +28,7 @@ namespace GRAPH_COLORING
             colors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
 
             // Comenzamos el sync para luego esperar a que los hilos terminen.
-            sync = new Barrier(participantCount: graph.NumberOfVertices);
+            //sync = new Barrier(participantCount: graph.NumberOfVertices);
 
             Thread[] threads = new Thread[graph.NumberOfVertices]; // 5 hilos.
             int threadIndex = 0;
@@ -42,8 +42,10 @@ namespace GRAPH_COLORING
                         ijValues[1] = j;
                         threads[threadIndex] = new Thread(MakeThreads);
                         threads[threadIndex].Start(ijValues);
+                        threadIndex++;
                     }
-            sync.SignalAndWait(); // Espera a que todos terminen.
+
+            //sync.SignalAndWait(); // Espera a que todos terminen.
         }
         private void MakeThreads(object ijValues)
         {

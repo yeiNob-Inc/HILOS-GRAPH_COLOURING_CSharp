@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label_EdgeList = new System.Windows.Forms.Label();
             this.panel_Buttons = new System.Windows.Forms.Panel();
+            this.btn_CreateRandomGraph = new System.Windows.Forms.Button();
             this.btn_EraseGraph = new System.Windows.Forms.Button();
             this.btn_EraseVertex = new System.Windows.Forms.Button();
             this.btn_GraphColoring = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_CreateRandomGraph = new System.Windows.Forms.Button();
             this.textBox_RandomGraph = new System.Windows.Forms.TextBox();
             this.label_RandomGraph = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -88,6 +88,13 @@
             this.panel_Buttons.Controls.Add(this.btn_AddEdge);
             this.panel_Buttons.Controls.Add(this.btn_AddVertex);
             this.panel_Buttons.Name = "panel_Buttons";
+            // 
+            // btn_CreateRandomGraph
+            // 
+            resources.ApplyResources(this.btn_CreateRandomGraph, "btn_CreateRandomGraph");
+            this.btn_CreateRandomGraph.Name = "btn_CreateRandomGraph";
+            this.btn_CreateRandomGraph.UseVisualStyleBackColor = true;
+            this.btn_CreateRandomGraph.Click += new System.EventHandler(this.btn_CreateRandomGraph_Click);
             // 
             // btn_EraseGraph
             // 
@@ -219,17 +226,11 @@
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
             // 
-            // btn_CreateRandomGraph
-            // 
-            resources.ApplyResources(this.btn_CreateRandomGraph, "btn_CreateRandomGraph");
-            this.btn_CreateRandomGraph.Name = "btn_CreateRandomGraph";
-            this.btn_CreateRandomGraph.UseVisualStyleBackColor = true;
-            this.btn_CreateRandomGraph.Click += new System.EventHandler(this.btn_CreateRandomGraph_Click);
-            // 
             // textBox_RandomGraph
             // 
             resources.ApplyResources(this.textBox_RandomGraph, "textBox_RandomGraph");
             this.textBox_RandomGraph.Name = "textBox_RandomGraph";
+            this.textBox_RandomGraph.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_RandomGraph_KeyDown);
             // 
             // label_RandomGraph
             // 

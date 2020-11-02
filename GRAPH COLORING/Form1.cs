@@ -12,13 +12,12 @@ namespace GRAPH_COLORING
 {
     public partial class Form1 : Form
     {
-        Grid g;
         Graph graph;
         //Vertex v;
         public Form1()
         {
             InitializeComponent();
-            g = new Grid(panel_GraphGrid, 10);
+            new Grid(panel_GraphGrid, 10);
             graph = new Graph();
             label_RandomGraph.Text += "\n" + graph.graphMatrix.Length;
             //v = new Vertex(System.Drawing.Color.Beige, 3, 4);
@@ -109,11 +108,17 @@ namespace GRAPH_COLORING
 
         private void btn_GraphColoring_Click(object sender, EventArgs e)
         {
-            Coloring c = new Coloring(graph);
-            c.GraphColoring(this);
-            //Coloring c = new Coloring(3, graph.VertexSet);
-            //c.graphColoring(graph.graphMatrix, 2);
-            panel_GraphGrid.Invalidate();
+            
+            if (graph.NumberOfVertices > 1)
+            {
+                //Coloring c = new Coloring(graph);
+                //c.GraphColoring(this);
+                ColoringThreads c = new ColoringThreads(graph);
+                c.GraphColoring();
+                //Coloring c = new Coloring(3, graph.VertexSet);
+                //c.graphColoring(graph.graphMatrix, 2);
+                panel_GraphGrid.Invalidate();
+            }
             //graph.SetVertexColored(false);
             //List<Color> colors = new List<Color>();
             //colors.Add(Color.Red);
@@ -158,12 +163,39 @@ namespace GRAPH_COLORING
                                         label_EdgeList);
                     }
                 panel_GraphGrid.Invalidate();
-        }
+            }
             catch
             {
                 Form popUp = new PopUp_XYError();
                 popUp.ShowDialog();
             }
 }
+
+        private void textBox_RandomGraph_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                try
+                {
+                    //Graph graph = new Graph();
+                    Random r = new Random();
+                    //int numEdges = 0; // Número de aristas que se crearán
+                    // Crear vértices.
+                    for (int i = 0; i < int.Parse(textBox_RandomGraph.Text); i++)
+                        graph.AddVertex(r.Next(Grid.NumCells), r.Next(Grid.NumCells));
+                    // Crear aristas.
+                    for (int i = 0; i < Grid.NumCells; i++)
+                        for (int j = 0; j < Grid.NumCells; j++)
+                        {
+                            graph.AddEdge(i, j, r.Next(Grid.NumCells), r.Next(Grid.NumCells),
+                                            label_EdgeList);
+                        }
+                    panel_GraphGrid.Invalidate();
+                }
+                catch
+                {
+                    Form popUp = new PopUp_XYError();
+                    popUp.ShowDialog();
+                }
+        }
     }
 }

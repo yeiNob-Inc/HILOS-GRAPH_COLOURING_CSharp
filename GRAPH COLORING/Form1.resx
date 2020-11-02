@@ -179,10 +179,109 @@
   <data name="panel_Buttons.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;btn_CreateRandomGraph.Name" xml:space="preserve">
+    <value>btn_CreateRandomGraph</value>
+  </data>
+  <data name="&gt;&gt;btn_CreateRandomGraph.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_CreateRandomGraph.Parent" xml:space="preserve">
+    <value>panel_Buttons</value>
+  </data>
+  <data name="&gt;&gt;btn_CreateRandomGraph.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseGraph.Name" xml:space="preserve">
+    <value>btn_EraseGraph</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseGraph.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseGraph.Parent" xml:space="preserve">
+    <value>panel_Buttons</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseGraph.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseVertex.Name" xml:space="preserve">
+    <value>btn_EraseVertex</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseVertex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseVertex.Parent" xml:space="preserve">
+    <value>panel_Buttons</value>
+  </data>
+  <data name="&gt;&gt;btn_EraseVertex.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btn_GraphColoring.Name" xml:space="preserve">
+    <value>btn_GraphColoring</value>
+  </data>
+  <data name="&gt;&gt;btn_GraphColoring.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_GraphColoring.Parent" xml:space="preserve">
+    <value>panel_Buttons</value>
+  </data>
+  <data name="&gt;&gt;btn_GraphColoring.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btn_AddEdge.Name" xml:space="preserve">
+    <value>btn_AddEdge</value>
+  </data>
+  <data name="&gt;&gt;btn_AddEdge.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_AddEdge.Parent" xml:space="preserve">
+    <value>panel_Buttons</value>
+  </data>
+  <data name="&gt;&gt;btn_AddEdge.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btn_AddVertex.Name" xml:space="preserve">
+    <value>btn_AddVertex</value>
+  </data>
+  <data name="&gt;&gt;btn_AddVertex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_AddVertex.Parent" xml:space="preserve">
+    <value>panel_Buttons</value>
+  </data>
+  <data name="&gt;&gt;btn_AddVertex.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="panel_Buttons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>864, 114</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panel_Buttons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>30, 30, 30, 30</value>
+  </data>
+  <data name="panel_Buttons.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>30, 30, 30, 30</value>
+  </data>
+  <data name="panel_Buttons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 382</value>
+  </data>
+  <data name="panel_Buttons.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel_Buttons.Name" xml:space="preserve">
+    <value>panel_Buttons</value>
+  </data>
+  <data name="&gt;&gt;panel_Buttons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_Buttons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel_Buttons.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
   <data name="btn_CreateRandomGraph.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btn_CreateRandomGraph.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -228,9 +327,6 @@ Aleatorios</value>
   </data>
   <data name="btn_EraseGraph.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
-  </data>
-  <data name="btn_EraseGraph.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="btn_EraseGraph.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft PhagsPa, 10pt</value>
@@ -291,6 +387,9 @@ Aleatorios</value>
   </data>
   <data name="btn_EraseVertex.Text" xml:space="preserve">
     <value>Borrar Nodo</value>
+  </data>
+  <data name="btn_EraseVertex.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;btn_EraseVertex.Name" xml:space="preserve">
     <value>btn_EraseVertex</value>
@@ -423,33 +522,6 @@ Aleatorios</value>
   </data>
   <data name="&gt;&gt;btn_AddVertex.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="panel_Buttons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>864, 114</value>
-  </data>
-  <data name="panel_Buttons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>30, 30, 30, 30</value>
-  </data>
-  <data name="panel_Buttons.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>30, 30, 30, 30</value>
-  </data>
-  <data name="panel_Buttons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 382</value>
-  </data>
-  <data name="panel_Buttons.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel_Buttons.Name" xml:space="preserve">
-    <value>panel_Buttons</value>
-  </data>
-  <data name="&gt;&gt;panel_Buttons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_Buttons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel_Buttons.ZOrder" xml:space="preserve">
-    <value>21</value>
   </data>
   <data name="panel_GraphGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -833,7 +905,7 @@ IGCA [2020-2021/A]</value>
     <value>23, 20</value>
   </data>
   <data name="textBox_RandomGraph.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;textBox_RandomGraph.Name" xml:space="preserve">
     <value>textBox_RandomGraph</value>

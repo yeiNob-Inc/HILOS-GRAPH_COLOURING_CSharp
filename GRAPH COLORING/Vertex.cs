@@ -50,7 +50,7 @@ namespace GRAPH_COLORING
         // Método para dibujar el vértice en la malla.
         public void DrawVertex(PaintEventArgs e)
         {
-            e.Graphics.DrawEllipse(new System.Drawing.Pen(System.Drawing.Color.Chocolate), XCenter - radio, YCenter - radio, radio * 2, radio * 2);
+            e.Graphics.DrawEllipse(new System.Drawing.Pen(System.Drawing.Color.Chocolate, 3), XCenter - radio, YCenter - radio, radio * 2, radio * 2);
             e.Graphics.FillEllipse(new SolidBrush(Color), XCenter - radio, YCenter - radio, radio * 2, radio * 2);
             //e.Graphics.DrawPie(new System.Drawing.Pen(System.Drawing.Color.Aquamarine), xCenter, yCenter, radio, radio, 0, 360);
             //e.Graphics.FillPie(new SolidBrush(color), xCenter, yCenter, radio, radio, 0, 360);
