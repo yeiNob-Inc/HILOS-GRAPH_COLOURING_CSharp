@@ -13,7 +13,7 @@ namespace GRAPH_COLORING
         // La lista de colores será compartida.
         List<Color> colors; // Lista de colores. Se pueden ir agregando más.
         Graph graph;
-        int tIndex = 0; // Para saber en cuál hilo vamos.
+        int tIndex = 0, numberOfData; // Para saber en cuál hilo vamos.
         //static Barrier sync; // Para que no regrese al form sin haber terminado los hilos.
         // Uso del Graph Coloring con Hilos.
         // El procedimiento debe ser secuencial porque los de adelante deben saber los colores del de atrás.
@@ -32,9 +32,13 @@ namespace GRAPH_COLORING
             // Comenzamos el sync para luego esperar a que los hilos terminen.
             //sync = new Barrier(participantCount: graph.NumberOfVertices);
 
-            Thread[] threads = new Thread[graph.NumberOfVertices]; // 5 hilos.
+            Thread[] threads = new Thread[graph.NumberOfVertices]; // n hilos.
+            //int numberOfThreads = 5;
+            //Thread[] threads = new Thread[numberOfThreads];
             int threadIndex = 0;
-            int[] ijValues = new int[3]; // Los índices del nodo y el número del hilo.
+            // El total de datos que le toca a cada uno.
+            //numberOfData = graph.NumberOfVertices / numberOfThreads;
+            int[] ijValues = new int[3]; // Los índices del nodo, el número del hilo.
             for (int i = 0; i < graph.graphMatrix.GetLength(0); i++)
                 for (int j = 0; j < graph.graphMatrix.GetLength(1); j++)
                     // Colorea solo si existe y tiene alguna relación.
@@ -44,9 +48,11 @@ namespace GRAPH_COLORING
                         ijValues[1] = j;
                         ijValues[2] = threadIndex;
                         threads[threadIndex] = new Thread(MakeThreads);
+                        threads[threadIndex].IsBackground = true;
                         threads[threadIndex].Start(ijValues);
                         threadIndex++;
-                        Thread.Sleep(100); // Para que se inicie el hilo y empiece.
+                        //while (!threads[threadIndex].IsAlive) ;// Para que se inicie el hilo y empiece.
+                        Thread.Sleep(200);
                     }
 
             //sync.SignalAndWait(); // Espera a que todos terminen.
@@ -55,10 +61,10 @@ namespace GRAPH_COLORING
         {
             int[] ij = (int[])ijValues;
             // Exploramos el nodo actual.
-            ExploreNode(graph.VertexSet[ij[0], ij[1]], ij[2]);
+            ExploreNode(ref graph.VertexSet[ij[0], ij[1]], ij[2]);
         }
         // Método que explorará un nodo y a sus conectados.
-        private void ExploreNode(Vertex currentVertex, int threadIndex)
+        private void ExploreNode(ref Vertex currentVertex, int threadIndex)
         {
             while (tIndex != threadIndex) ;
             tIndex = threadIndex;

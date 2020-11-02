@@ -17,7 +17,7 @@ namespace GRAPH_COLORING
         public Form1()
         {
             InitializeComponent();
-            new Grid(panel_GraphGrid, 10);
+            new Grid(panel_GraphGrid, 5);
             graph = new Graph();
             label_RandomGraph.Text += "\n" + graph.graphMatrix.Length;
             //v = new Vertex(System.Drawing.Color.Beige, 3, 4);
@@ -111,10 +111,10 @@ namespace GRAPH_COLORING
             
             if (graph.NumberOfVertices > 1)
             {
-                //Coloring c = new Coloring(graph);
-                //c.GraphColoring(this);
-                ColoringThreads c = new ColoringThreads(graph);
-                c.GraphColoring();
+                Coloring c = new Coloring(graph);
+                c.GraphColoring(this);
+                //ColoringThreads c = new ColoringThreads(graph);
+                //c.GraphColoring();
                 //Coloring c = new Coloring(3, graph.VertexSet);
                 //c.graphColoring(graph.graphMatrix, 2);
                 panel_GraphGrid.Invalidate();
