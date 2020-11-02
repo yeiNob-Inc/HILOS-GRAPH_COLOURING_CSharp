@@ -59,11 +59,13 @@ namespace GRAPH_COLORING
 
         public void AddEdge(int startVX, int startVY, int targetVX, int targetVY, Label label_EdgeList)
         {
+            Edge e = new Edge(vertexSet[startVX, startVY], vertexSet[targetVX, targetVY]);
             // Si se intenta hacer relaciones con vértices no existentes no deja.
             // Si existen los vértices a relacionar, hacer el proceso.
-            if (vertexMatrix[startVX, startVY] && vertexMatrix[targetVX, targetVY])
+            if (vertexMatrix[startVX, startVY] && vertexMatrix[targetVX, targetVY]
+                && !EdgeExist(e))
             {
-                edgeSet.Add(new Edge(vertexSet[startVX, startVY], vertexSet[targetVX, targetVY ]));
+                edgeSet.Add(e);
                 // Agregamos el último elemento como vecino.
                 vertexSet[startVX, startVY].addNeighbor(edgeSet.ElementAt(edgeSet.Count - 1));
 
@@ -71,11 +73,7 @@ namespace GRAPH_COLORING
                 // edgeSet.Add(new Edge(vertexSet[targetVX - 1, targetVY - 1], vertexSet[startVX - 1, startVY - 1]));
                 vertexSet[targetVX, targetVY].addNeighbor(new Edge(vertexSet[targetVX, targetVY], vertexSet[startVX, startVY]));
 
-                // Si los Edges que se ingresaron ya existían, eliminar y no imprimir.
-                if (EdgesExist(edgeSet.ElementAt(edgeSet.Count - 1).startVertex, edgeSet.ElementAt(edgeSet.Count - 1).targetVertex))
-                    edgeSet.RemoveAt(edgeSet.Count - 1); // Eliminar porque se agregó y ya existía.
-                else
-                    edgeSet.ElementAt(edgeSet.Count - 1).WriteEdge(label_EdgeList);
+                edgeSet.ElementAt(edgeSet.Count - 1).WriteEdge(label_EdgeList);
             }
 
         }
@@ -100,29 +98,39 @@ namespace GRAPH_COLORING
                 edgeSet.ElementAt(i).DrawEdge(e);
         }
         // Método para ver si los Edges que se quieren meter ya existen.
-        private bool EdgesExist(Vertex startVertex, Vertex targetVertex)
+        private bool EdgeExist(Edge edge)
         {
-            int i = 0;
-            //bool isThereEdges = false; // Variable local para ver si ya existen edges o no.
-            if (edgeSet.Count > 1)
-            {
-                //isThereEdges = true; // Sí existe más de un Edge.
-                // Si se encuentra el vértice inicial o final que se ingresó con
-                // uno que esté en la lista de Edges, regresar true.
-                for (; i < edgeSet.Count; i++)
-                    if ((edgeSet.ElementAt(i).startVertex == startVertex
-                        || edgeSet.ElementAt(i).startVertex == targetVertex)
-                        && (edgeSet.ElementAt(i).targetVertex == startVertex
-                        || edgeSet.ElementAt(i).targetVertex == targetVertex))
+            if(edgeSet.Count > 0)
+                for(int i = 0; i < edgeSet.Count; i++)
+                    if ((edgeSet.ElementAt(i).startVertex == edge.startVertex
+                            || edgeSet.ElementAt(i).startVertex == edge.targetVertex)
+                            && (edgeSet.ElementAt(i).targetVertex == edge.startVertex
+                            || edgeSet.ElementAt(i).targetVertex == edge.targetVertex))
                         return true;
-                /* Si se recorrió toda la lista y se encontró en la 
-                última posición (porque el vértice a este punto ya se terminó),
-                entonces el iterador habrá llegado a su máximo y regresamos false;*/
-                return false;
-                //return (i >= edgeSet.Count - 1); // Esto si existen más de un Edge.
-            }
-            else
-                return false; // Regresar falso si no existen los edges.
+            return false;
+            //return edgeSet.ElementAt(i);
+
+            //int i = 0;
+            ////bool isThereEdges = false; // Variable local para ver si ya existen edges o no.
+            //if (edgeSet.Count > 1)
+            //{
+            //    //isThereEdges = true; // Sí existe más de un Edge.
+            //    // Si se encuentra el vértice inicial o final que se ingresó con
+            //    // uno que esté en la lista de Edges, regresar true.
+            //    for (; i < edgeSet.Count; i++)
+            //        if ((edgeSet.ElementAt(i).startVertex == startVertex
+            //            || edgeSet.ElementAt(i).startVertex == targetVertex)
+            //            && (edgeSet.ElementAt(i).targetVertex == startVertex
+            //            || edgeSet.ElementAt(i).targetVertex == targetVertex))
+            //            return true;
+            //    /* Si se recorrió toda la lista y se encontró en la 
+            //    última posición (porque el vértice a este punto ya se terminó),
+            //    entonces el iterador habrá llegado a su máximo y regresamos false;*/
+            //    return false;
+            //    //return (i >= edgeSet.Count - 1); // Esto si existen más de un Edge.
+            //}
+            //else
+            //    return false; // Regresar falso si no existen los edges.
         }
         // Método que inicializa la mariz de adyacencia.
         private void InitializeMatrix(ref bool[,] matrix)
