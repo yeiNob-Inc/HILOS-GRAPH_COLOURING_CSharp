@@ -105,18 +105,26 @@ namespace GRAPH_COLORING
 
         private void btn_GraphColoring_Click(object sender, EventArgs e)
         {
+            graph.SetVertexColored(false);
             List<Color> colors = new List<Color>();
-            colors.Add(Color.Red);
-            colors.Add(Color.Blue);
-            Coloring graphColoring = new Coloring(colors, graph.NumberOfVertices);
             Random r = new Random();
-            while (!graphColoring.SetColors(graph.VertexPrintable.ElementAt(0)))
+            colors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
+            colors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
+            //graphColoring.Colors = colors;
+            Coloring graphColoring = new Coloring(colors, graph.NumberOfVertices);
+            for (int i = 0; i < graph.VertexPrintable.Count; i++)
             {
-                // Si no hay soluciòn, agregamos un nuevo color.
+                while (!graphColoring.SetColors(graph.VertexPrintable.ElementAt(0)))
+                {
+                    //Si no hay soluciòn, agregamos un nuevo color.
+                    graphColoring.Colors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
+                }
+                panel_GraphGrid.Invalidate(); // Dibujar los vértices.
+                colors.Clear();
                 colors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
+                colors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
+                graphColoring.Colors = colors;
             }
-            panel_GraphGrid.Invalidate(); // Dibujar los vértices.
-
         }
     }
 }

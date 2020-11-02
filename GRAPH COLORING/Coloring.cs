@@ -14,7 +14,7 @@ namespace GRAPH_COLORING
     class Coloring
     {
         // Lista de colores para ir agregando más cuando no haya solución, por eso es pública.
-        List<Color> Colors { get; set; }
+        public List<Color> Colors { get; set; }
         //Color[] colors;
         int colorCount;
         int numberOfVertices;

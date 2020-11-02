@@ -56,6 +56,12 @@ namespace GRAPH_COLORING
             }
             
         }
+        // Método que pondrá a todos los colores como no coloreados.
+        public void SetVertexColored(bool isColored)
+        {
+            for (int i = 0; i < VertexPrintable.Count; i++)
+                VertexPrintable.ElementAt(i).IsColored = isColored;
+        }
 
         public void AddEdge(int startVX, int startVY, int targetVX, int targetVY, Label label_EdgeList)
         {
