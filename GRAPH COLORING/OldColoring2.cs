@@ -22,47 +22,55 @@ filter_none
 
 /* C# program for solution of M Coloring problem
 using backtracking */
+using GRAPH_COLORING;
 using System;
+using System.Collections.Generic;
+using System.Drawing;
 
-class GFG
+class Coloring
 {
-	readonly int V = 4;
+	readonly int vertexNumber;
 	int[] color;
-
+	Vertex[,] vertexSet;
+	Color[] realColors;
+	public Coloring(int vertexNumber, Vertex[,] vertexSet)
+	{
+		this.vertexNumber = vertexNumber;
+		this.vertexSet = vertexSet;
+	}
 	/* A utility function to check if the current
 	color assignment is safe for vertex v */
-	bool isSafe(int v, int[,] graph,
-				int[] color, int c)
+	bool isSafe(int v, bool[,] graph, int[] color, int c)
 	{
-		for (int i = 0; i < V; i++)
-			if (graph[v, i] == 1 && c == color[i])
+		for (int i = 0; i < vertexNumber; i++)
+			if (graph[i, v] && c == color[i])
 				return false;
 		return true;
 	}
 
 	/* A recursive utility function to solve m
 	coloring problem */
-	bool graphColoringUtil(int[,] graph, int m,
-						int[] color, int v)
+	bool graphColoringUtil(bool[,] graph, int numberOfColors, int[] color, int v)
 	{
 		/* base case: If all vertices are assigned
 		a color then return true */
-		if (v == V)
+		if (v == vertexNumber)
 			return true;
 
 		/* Consider this vertex v and try different
 		colors */
-		for (int c = 1; c <= m; c++)
+		for (int c = 1; c <= numberOfColors; c++)
 		{
 			/* Check if assignment of color c to v
 			is fine*/
 			if (isSafe(v, graph, color, c))
 			{
 				color[v] = c;
+				vertexSet[0, v].Color = realColors[c];
 
 				/* recur to assign colors to rest
 				of the vertices */
-				if (graphColoringUtil(graph, m,
+				if (graphColoringUtil(graph, numberOfColors,
 									color, v + 1))
 					return true;
 
@@ -85,19 +93,20 @@ class GFG
 	Please note that there may be more than one
 	solutions, this function prints one of the
 	feasible solutions.*/
-	bool graphColoring(int[,] graph, int m)
+	public bool graphColoring(bool[,] graph, int numberOfColors)
 	{
 		// Initialize all color values as 0. This
 		// initialization is needed correct functioning
 		// of isSafe()
-		color = new int[V];
-		for (int i = 0; i < V; i++)
+		color = new int[vertexNumber];
+		AssignRealColors(color);
+		for (int i = 0; i < vertexNumber; i++)
 			color[i] = 0;
 
 		// Call graphColoringUtil() for vertex 0
-		if (!graphColoringUtil(graph, m, color, 0))
+		if (!graphColoringUtil(graph, numberOfColors, color, 0))
 		{
-			Console.WriteLine("Solution does not exist");
+			//Console.WriteLine("Solution does not exist");
 			return false;
 		}
 
@@ -105,13 +114,22 @@ class GFG
 		printSolution(color);
 		return true;
 	}
+	// Método para asignar colores reales y no solo números.
+	private Color[] AssignRealColors(int[] color)
+    {
+		realColors = new Color[color.Length];
+		Random r = new Random();
+		for (int i = 0; i < realColors.Length; i++)
+			realColors[i] = Color.FromArgb(r.Next(256), r.Next(256), r.Next(256));
+		return realColors;
+    }
 
 	/* A utility function to print solution */
 	void printSolution(int[] color)
 	{
 		Console.WriteLine("Solution Exists: Following"
 						+ " are the assigned colors");
-		for (int i = 0; i < V; i++)
+		for (int i = 0; i < vertexNumber; i++)
 			Console.Write(" " + color[i] + " ");
 		Console.WriteLine();
 	}
@@ -133,8 +151,8 @@ class GFG
 	//					{ 1, 0, 1, 0 },
 	//					{ 1, 1, 0, 1 },
 	//					{ 1, 0, 1, 0 } };
-	//	int m = 3; // Number of colors
-	//	Coloring.graphColoring(graph, m);
+	//	int numberOfColors = 3; // Number of colors
+	//	Coloring.graphColoring(graph, numberOfColors);
 	//}
 }
 

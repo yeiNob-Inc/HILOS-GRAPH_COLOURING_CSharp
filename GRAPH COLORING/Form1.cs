@@ -105,6 +105,11 @@ namespace GRAPH_COLORING
 
         private void btn_GraphColoring_Click(object sender, EventArgs e)
         {
+            Coloring c = new Coloring(graph);
+            c.GraphColoring();
+            //Coloring c = new Coloring(3, graph.VertexSet);
+            //c.graphColoring(graph.graphMatrix, 2);
+            panel_GraphGrid.Invalidate();
             //graph.SetVertexColored(false);
             //List<Color> colors = new List<Color>();
             //colors.Add(Color.Red);

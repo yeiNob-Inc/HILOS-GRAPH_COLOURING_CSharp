@@ -22,10 +22,15 @@ namespace GRAPH_COLORING
 
         public int XVertex { set; get; }
         public int YVertex { set; get; }
+        public List<Vertex> ConnectedVertex { get; set; } // Lista de vértices conectados.
+        // Lista de colores que no se pueden utilizar para este vértice.
+        public List<int> NotColoreable { get; set; }
         // Recibimos las coordenadas del vértice.
         public Vertex(System.Drawing.Color vertexColor, int xVertex, int yVertex)
         {
             AdjacentEdges = new List<Edge>();
+            ConnectedVertex = new List<Vertex>();
+            NotColoreable = new List<int>();
             IsColored = false;
             Color = vertexColor;
             //this.xCenter = xCenter;
