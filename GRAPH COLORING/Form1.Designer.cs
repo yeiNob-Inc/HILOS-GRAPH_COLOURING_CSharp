@@ -324,6 +324,7 @@
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label label_ColorNumber;
         public System.Windows.Forms.Label label_VertexNumber;
+        public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label_EdgeNumber;
     }
 }

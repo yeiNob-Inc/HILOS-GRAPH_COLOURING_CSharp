@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coloring.cs" />
+    <Compile Include="ColoringThreads.cs" />
     <Compile Include="OldColoring.cs" />
     <Compile Include="OldColoring2.cs" />
     <Compile Include="Edge.cs" />

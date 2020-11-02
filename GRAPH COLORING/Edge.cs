@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,16 @@ namespace GRAPH_COLORING
         // Queremos obtener los vértices.
         public Vertex startVertex { get; }
         public Vertex targetVertex { get; }
-        System.Drawing.Color color;
+        Color color;
         public Edge(Vertex startVertex, Vertex targetVertex)
         {
             this.startVertex = startVertex;
             this.targetVertex = targetVertex;
 
             Random r = new Random(); // Para los colores.
-            color = System.Drawing.Color.FromArgb(r.Next(256), r.Next(256), r.Next(256));
+            color = Color.FromArgb(r.Next(256), r.Next(256), r.Next(256));
+            while (color == Color.Transparent || color == Color.Empty) // Que no salgan colores transparentes.
+                color = Color.FromArgb(r.Next(256), r.Next(256), r.Next(256));
         }
         public void DrawEdge(PaintEventArgs e)
         {
