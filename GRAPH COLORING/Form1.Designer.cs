@@ -101,6 +101,7 @@
             this.btn_GraphColoring.Name = "btn_GraphColoring";
             this.btn_GraphColoring.Tag = "Button";
             this.btn_GraphColoring.UseVisualStyleBackColor = true;
+            this.btn_GraphColoring.Click += new System.EventHandler(this.btn_GraphColoring_Click);
             // 
             // btn_AddEdge
             // 

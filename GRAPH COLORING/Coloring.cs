@@ -6,72 +6,78 @@ using System.Text;
 using System.Threading.Tasks;
 
 /* 
- * Clase que manejará el coloreado del grafo.**/
+ * Clase que manejará el coloreado del grafo.
+ * **/
 
 namespace GRAPH_COLORING
 {
-    //class Coloring
-    //{
-    //    Color[] colors;
-    //    int colorCount;
-    //    int numberOfVertices;
+    class Coloring
+    {
+        // Lista de colores para ir agregando más cuando no haya solución, por eso es pública.
+        List<Color> Colors { get; set; }
+        //Color[] colors;
+        int colorCount;
+        int numberOfVertices;
 
-    //    public Coloring(Color[] colors, int N)
-    //    {
-    //        this.colors = colors;
-    //        this.numberOfVertices = N;
+        public Coloring(List<Color> colors, int N)
+        {
+            this.Colors = colors;
+            this.numberOfVertices = N;
 
-    //    }
+        }
 
-    //    public bool setColors(Vertex vertex)
-    //    {
+        public bool SetColors(Vertex vertex)
+        {
 
-    //        for (int colorIndex = 0; colorIndex < colors.Length; colorIndex++)
-    //        {
+            for (int colorIndex = 0; colorIndex < Colors.Count; colorIndex++)
+            {
 
-    //            // Step-1 : checking validity
-    //            if (!canColorWith(colorIndex, vertex)) continue;  //Step-2 : Continue
+                // Step-1 : checking validity
+                // Si no se puede colorear el actual, avanzar el índice.
+                if (!CanColorWith(colorIndex, vertex)) continue;  //Step-2 : Continue
 
-    //            //Step-2 : coloring
-    //            vertex.color = colors[colorIndex];
-    //            vertex.IsColored = true;
-    //            colorCount++;
+                //Step-3 : coloring
+                //vertex.Color = colors[colorIndex]; // Colorear el vértice actual.
+                vertex.Color = Colors.ElementAt(colorIndex); // Colorear el vértice actual.
+                vertex.IsColored = true;
+                colorCount++;
 
-    //            //Step-4 : Whether all vertices colored?
-    //            if (colorCount == numberOfVertices) //Base Case
-    //                return true;
+                //Step-4 : Whether all vertices colored?
+                if (colorCount == numberOfVertices) //Base Case
+                    return true;
 
-    //            //Step-5 : Next uncolored vertex
-    //            for (Edge edge:vertex.adjacentEdges)
-    //            {
-    //                if (!edge.targetVertex.colored)
-    //                {
+                //Step-5 : Next uncolored vertex
+                foreach (Edge edge in vertex.AdjacentEdges)
+                {
+                    if (!edge.targetVertex.IsColored)
+                    {
 
-    //                    if (setColors(edge.targetVertex))
-    //                        return true;
-    //                }
+                        if (SetColors(edge.targetVertex))
+                            return true;
+                    }
 
-    //            }
-    //        }
+                }
+            }
 
-    //        // Step-3 : Backtracking
-    //        vertex.color = "";
-    //        vertex.colored = false;
-    //        return false;
-    //    }
+            // Step-3 : Backtracking
+            vertex.Color = Color.Transparent;
+            vertex.IsColored = false;
+            return false;
+        }
 
-    //    //Function to check whether it is valid to color with color[colorIndex]
-    //    private bool canColorWith(int colorIndex, Vertex vertex)
-    //    {
-    //        Vertex neighborVertex;
-    //        for (Edge edge:vertex.adjacentEdges)
-    //        {
-    //            neighborVertex = edge.targetVertex;
-    //            if (neighborVertex.colored && neighborVertex.color == colors[colorIndex])
-    //                return false;
-    //        }
-
-    //        return true;
-    //    }
-    //}
+        //Function to check whether it is valid to color with color[colorIndex]
+        private bool CanColorWith(int colorIndex, Vertex vertex)
+        {
+            Vertex neighborVertex;
+            // Recorrer los vértices adyacentes del Edge en el vértice.
+            foreach (Edge edge in vertex.AdjacentEdges)
+            {
+                neighborVertex = edge.targetVertex;
+                //if (neighborVertex.IsColored && neighborVertex.Color == colors[colorIndex])
+                if (neighborVertex.IsColored && neighborVertex.Color == Colors.ElementAt(colorIndex))
+                    return false;
+            }
+            return true;
+        }
+    }
 }

@@ -28,7 +28,7 @@ namespace GRAPH_COLORING
         // Escribir los Edges.
         public void WriteEdge(Label label_EdgeList)
         {
-            label_EdgeList.Text += " V("+ startVertex.xVertex + ", " + startVertex.yVertex + "), " + "V("+ targetVertex.xVertex + ", " + targetVertex.yVertex + ")\n";
+            label_EdgeList.Text += " V("+ startVertex.XVertex + ", " + startVertex.YVertex + "), " + "V("+ targetVertex.XVertex + ", " + targetVertex.YVertex + ")\n";
         }
     }
 }

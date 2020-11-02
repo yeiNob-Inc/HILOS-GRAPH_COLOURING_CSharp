@@ -102,5 +102,21 @@ namespace GRAPH_COLORING
                 popUp.ShowDialog();
             }
         }
+
+        private void btn_GraphColoring_Click(object sender, EventArgs e)
+        {
+            List<Color> colors = new List<Color>();
+            colors.Add(Color.Red);
+            colors.Add(Color.Blue);
+            Coloring graphColoring = new Coloring(colors, graph.NumberOfVertices);
+            Random r = new Random();
+            while (!graphColoring.SetColors(graph.VertexPrintable.ElementAt(0)))
+            {
+                // Si no hay soluciòn, agregamos un nuevo color.
+                colors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
+            }
+            panel_GraphGrid.Invalidate(); // Dibujar los vértices.
+
+        }
     }
 }

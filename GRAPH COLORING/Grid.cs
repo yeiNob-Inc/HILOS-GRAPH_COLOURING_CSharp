@@ -32,6 +32,28 @@ namespace GRAPH_COLORING
             NumCells = _numCells;
             CellSize = grid.Size.Width / NumCells;
         }
+        /// <summary>
+        /// Método que creará las líneas de la malla en el panel.
+        /// Dividirá este proceso entre varios hilos
+        /// </summary>
+        public static void MakeGridNoThreads(PaintEventArgs e)
+        {
+            Pen color = new Pen(Color.Black);
+            int x, y, finalCoord = NumCells * CellSize;
+            // finalCoord es la última coordenada, el último punto de la línea.
+            for (int i = 1; i < NumCells; i++)
+            {
+                x = y = i * CellSize;
+
+                /* e.Graphics.DrawLine(color, x1, y1, 2, y2); */
+
+                // Las líneas de y van del 0 en y hasta el máximo, que es el número de celdas por su tamaño.
+                // Las x no cambian por imprimir en y.
+                e.Graphics.DrawLine(color, x, 0, x, finalCoord);
+                // Lo mismo pasa con las líneas en x. La y no cambia, pero las x van del 0 al xFinal.
+                e.Graphics.DrawLine(color, 0, y, finalCoord, y);
+            }
+        }
 
         public void MakeGridThreads(System.Windows.Forms.Panel grid, PaintEventArgs e, int numThreads)
         {
@@ -141,35 +163,6 @@ namespace GRAPH_COLORING
                     continue; 
                 }
                 isDrawOccupied = false; // Indicar que ya se terminó de dibujar.
-            }
-        }
-
-
-        /// <summary>
-        /// 
-        /// Método que creará las líneas de la malla en el panel.
-        /// Dividirá este proceso entre varios hilos.
-        /// 
-        /// </summary>
-        /// <param name="e"></param>
-        /// <param name="grid"></param>
-        /// <param name="numCells"></param>
-        public static void MakeGridNoThreads(PaintEventArgs e)
-        {
-            Pen color = new Pen(Color.Black);
-            int x, y, finalCoord = NumCells * CellSize;
-            // finalCoord es la última coordenada, el último punto de la línea.
-            for (int i = 1; i < NumCells; i++)
-            {
-                x = y = i * CellSize;
-
-                /* e.Graphics.DrawLine(color, x1, y1, 2, y2); */
-
-                // Las líneas de y van del 0 en y hasta el máximo, que es el número de celdas por su tamaño.
-                // Las x no cambian por imprimir en y.
-                e.Graphics.DrawLine(color, x, 0, x, finalCoord);
-                // Lo mismo pasa con las líneas en x. La y no cambia, pero las x van del 0 al xFinal.
-                e.Graphics.DrawLine(color, 0, y, finalCoord, y);
             }
         }
     }

@@ -17,30 +17,26 @@ namespace GRAPH_COLORING
     class Graph
     {
         // Lista de vèrtices para imprimirlos.
-        List<Vertex> vertexPrintable;
+        public List<Vertex> VertexPrintable { get; set; }
         Vertex[,] vertexSet;
         List<Edge> edgeSet;
+
         // Matriz en donde un elemento guardará el vértice con el que se relaciona y viceversa.
         //Edge[,] edgeSet/*;*/
         // Matriz de adyacencia.
         //bool[,] adjacencyMatrix, vertexMatrix;
-        bool[,] vertexMatrix; // Si hay vértice o no.
-        int graphSize;
+        private readonly bool[,] vertexMatrix; // Si hay vértice o no.
+        private readonly int graphSize;
+        public int NumberOfVertices { get; set; }
         // Tomemos en cuenta que el grafo será de nxn.
         public Graph()
         {
             graphSize = Grid.NumCells;
-            //vertexSet = new List<Vertex>();
             edgeSet = new List<Edge>();
-            vertexPrintable = new List<Vertex>();
-            //edgeSet = new Edge[graphSize, graphSize];
-
+            VertexPrintable = new List<Vertex>();
             vertexSet = new Vertex[graphSize, graphSize];
-            //adjacencyMatrix = new bool[graphSize, graphSize];
             vertexMatrix = new bool[graphSize, graphSize];
-            //this.graphSize = graphSize;
-            //adjacencyMatrix = new bool[graphSize, graphSize];
-            //InitializeMatrix(ref adjacencyMatrix);
+            NumberOfVertices = 0; // Indicar que aún no hay vértices.
             InitializeMatrix(ref vertexMatrix);
             //vertexSet.Add(new Vertex(System.Drawing.Color.Beige, 3, 4));
             //vertexSet.Add(new Vertex(System.Drawing.Color.Red, 1, 2));
@@ -51,9 +47,12 @@ namespace GRAPH_COLORING
             // Que el vértice esté dentro del rango y no exista aún.
             if (v1 >= 0 && v1 < graphSize && v2 >= 0 && v2 < graphSize && !vertexMatrix[v1, v2])
             {
-                vertexPrintable.Add(new Vertex(System.Drawing.Color.Black, v1, v2));
-                vertexSet[v1, v2] = new Vertex(System.Drawing.Color.Black, v1, v2);
+                //vertexPrintable.Add(new Vertex(System.Drawing.Color.Transparent, v1, v2));
+                // No sé si de esta forma tengan la misma dirección de memoria.
+                VertexPrintable.Add(vertexSet[v1, v2] = new Vertex(System.Drawing.Color.Transparent, v1, v2));
+
                 vertexMatrix[v1, v2] = true;
+                NumberOfVertices++; // Aumentar el número de vértices.
             }
             
         }
@@ -68,12 +67,16 @@ namespace GRAPH_COLORING
             {
                 edgeSet.Add(e);
                 // Agregamos el último elemento como vecino.
-                vertexSet[startVX, startVY].addNeighbor(edgeSet.ElementAt(edgeSet.Count - 1));
-
+                vertexSet[startVX, startVY].AddNeighbor(edgeSet.ElementAt(edgeSet.Count - 1));
                 // Hacer el proceso anterior para ser bidireccional
                 // edgeSet.Add(new Edge(vertexSet[targetVX - 1, targetVY - 1], vertexSet[startVX - 1, startVY - 1]));
-                vertexSet[targetVX, targetVY].addNeighbor(new Edge(vertexSet[targetVX, targetVY], vertexSet[startVX, startVY]));
+                vertexSet[targetVX, targetVY].AddNeighbor(new Edge(vertexSet[targetVX, targetVY], vertexSet[startVX, startVY]));
 
+                // Buscar el elemento al que le agregaremos el vecino, y agregárselo.
+                VertexPrintable.ElementAt(VertexPrintable.FindIndex(vertexSet[startVX, startVY].IsTheSameVertex)).AddNeighbor(edgeSet.ElementAt(edgeSet.Count - 1));
+                // Hacer lo mismo pero al contrario.
+                VertexPrintable.ElementAt(VertexPrintable.FindIndex(vertexSet[targetVX, targetVY].IsTheSameVertex)).AddNeighbor(new Edge(vertexSet[targetVX, targetVY], vertexSet[startVX, startVY]));
+                
                 edgeSet.ElementAt(edgeSet.Count - 1).WriteEdge(label_EdgeList);
             }
 
@@ -89,8 +92,8 @@ namespace GRAPH_COLORING
         // Método que imprime todos los vértices.
         public void DrawAllVertex(PaintEventArgs e)
         {
-            for (int i = 0; i < vertexPrintable.Count; i++)
-                vertexPrintable.ElementAt(i).DrawVertex(e);
+            for (int i = 0; i < VertexPrintable.Count; i++)
+                VertexPrintable.ElementAt(i).DrawVertex(e);
         }
         
         public void DrawAllEdges(PaintEventArgs e)
