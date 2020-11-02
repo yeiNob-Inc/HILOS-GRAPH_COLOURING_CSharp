@@ -55,6 +55,7 @@ namespace GRAPH_COLORING
                 vertexSet[v1, v2] = new Vertex(System.Drawing.Color.Black, v1, v2);
                 vertexMatrix[v1, v2] = true;
             }
+            
         }
 
         public void AddEdge(int startVX, int startVY, int targetVX, int targetVY, Label label_EdgeList)

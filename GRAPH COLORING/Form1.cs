@@ -34,25 +34,62 @@ namespace GRAPH_COLORING
             //v.DrawVertex(e);
         }
 
-        private void btn_AddVertex_MouseUp(object sender, MouseEventArgs e)
+        // MÉTODO PARA QUE AL PRESIONAR ENTER SE INGRESEN LOS DATOS DEL VÉRTICE.
+
+        private void textBox_VertexXY_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                try
+                {
+                    graph.AddVertex(int.Parse(textBox_VertexX.Text), int.Parse(textBox_VertexY.Text));
+                    panel_GraphGrid.Invalidate(); // Dibujar el nuevo vértice.
+                }
+                catch // Si hay una excepción por espacios en blanco, letras, etc., sale el Pop up.
+                {
+                    Form popUp = new PopUp_XYError();
+                    popUp.ShowDialog();
+                }
+        }
+        // MÉTODO PARA QUE AL DAR ENTER SE INGRESE LA INFORMACIÓN DE LOS ARISTAS.
+
+        private void textBox_EdgeV1V2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                try
+                {
+                    graph.AddEdge(int.Parse(textBox_EdgeV1X.Text),
+                                  int.Parse(textBox_EdgeV1Y.Text),
+                                  int.Parse(textBox_EdgeV2X.Text),
+                                  int.Parse(textBox_EdgeV2Y.Text), label_EdgeList);
+                    panel_GraphGrid.Invalidate(); // Dibujar el nuevo vértice.
+                }
+                catch
+                {
+                    Form popUp = new PopUp_XYError();
+                    popUp.ShowDialog();
+                }
+        }
+        // Al dar click (con el mouse, espacio o enter) en agregar Vertex, se crea.
+
+        private void btn_AddVertex_Click(object sender, EventArgs e)
         {
             try
             {
                 graph.AddVertex(int.Parse(textBox_VertexX.Text), int.Parse(textBox_VertexY.Text));
                 panel_GraphGrid.Invalidate(); // Dibujar el nuevo vértice.
             }
-            catch
+            catch // Si hay una excepción por espacios en blanco, letras, etc., sale el Pop up.
             {
                 Form popUp = new PopUp_XYError();
                 popUp.ShowDialog();
             }
         }
+        // Al dar click (con el mouse, espacio o enter) en agregar Edge, se crea.
 
-        private void btn_AddEdge_MouseUp(object sender, MouseEventArgs e)
+        private void btn_AddEdge_Click(object sender, EventArgs e)
         {
             try
             {
-
                 graph.AddEdge(int.Parse(textBox_EdgeV1X.Text),
                               int.Parse(textBox_EdgeV1Y.Text),
                               int.Parse(textBox_EdgeV2X.Text),
@@ -64,18 +101,6 @@ namespace GRAPH_COLORING
                 Form popUp = new PopUp_XYError();
                 popUp.ShowDialog();
             }
-        }
-        // Si se presiona Enter se ingresa la información.
-
-        private void textBox_VertexX_KeyDown(object sender, KeyEventArgs e)
-        {
-            //if (e.KeyCode == Keys.Enter)
-            //    btn_AddVertex_MouseUp(sender);
-        }
-        // Método para agregar un vértice desde el form.
-        private void AddVertex()
-        {
-
         }
     }
 }

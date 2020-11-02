@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Panel panel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.label_EdgeList = new System.Windows.Forms.Label();
             this.panel_Buttons = new System.Windows.Forms.Panel();
             this.btn_EraseGraph = new System.Windows.Forms.Button();
             this.btn_EraseVertex = new System.Windows.Forms.Button();
@@ -50,11 +51,25 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label_EdgeList = new System.Windows.Forms.Label();
             panel1 = new System.Windows.Forms.Panel();
-            this.panel_Buttons.SuspendLayout();
             panel1.SuspendLayout();
+            this.panel_Buttons.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            resources.ApplyResources(panel1, "panel1");
+            panel1.BackColor = System.Drawing.Color.SeaShell;
+            panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panel1.Controls.Add(this.label_EdgeList);
+            panel1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            panel1.Name = "panel1";
+            // 
+            // label_EdgeList
+            // 
+            resources.ApplyResources(this.label_EdgeList, "label_EdgeList");
+            this.label_EdgeList.Name = "label_EdgeList";
             // 
             // panel_Buttons
             // 
@@ -93,7 +108,7 @@
             this.btn_AddEdge.Name = "btn_AddEdge";
             this.btn_AddEdge.Tag = "Button";
             this.btn_AddEdge.UseVisualStyleBackColor = true;
-            this.btn_AddEdge.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_AddEdge_MouseUp);
+            this.btn_AddEdge.Click += new System.EventHandler(this.btn_AddEdge_Click);
             // 
             // btn_AddVertex
             // 
@@ -101,7 +116,7 @@
             this.btn_AddVertex.Name = "btn_AddVertex";
             this.btn_AddVertex.Tag = "Button";
             this.btn_AddVertex.UseVisualStyleBackColor = true;
-            this.btn_AddVertex.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_AddVertex_MouseUp);
+            this.btn_AddVertex.Click += new System.EventHandler(this.btn_AddVertex_Click);
             // 
             // panel_GraphGrid
             // 
@@ -135,13 +150,13 @@
             // 
             resources.ApplyResources(this.textBox_VertexX, "textBox_VertexX");
             this.textBox_VertexX.Name = "textBox_VertexX";
-            this.textBox_VertexX.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_VertexX_KeyDown);
+            this.textBox_VertexX.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_VertexXY_KeyDown);
             // 
             // textBox_VertexY
             // 
             resources.ApplyResources(this.textBox_VertexY, "textBox_VertexY");
             this.textBox_VertexY.Name = "textBox_VertexY";
-            this.textBox_VertexY.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_VertexX_KeyDown);
+            this.textBox_VertexY.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_VertexXY_KeyDown);
             // 
             // label_XY
             // 
@@ -152,21 +167,25 @@
             // 
             resources.ApplyResources(this.textBox_EdgeV1X, "textBox_EdgeV1X");
             this.textBox_EdgeV1X.Name = "textBox_EdgeV1X";
+            this.textBox_EdgeV1X.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_EdgeV1V2_KeyDown);
             // 
             // textBox_EdgeV1Y
             // 
             resources.ApplyResources(this.textBox_EdgeV1Y, "textBox_EdgeV1Y");
             this.textBox_EdgeV1Y.Name = "textBox_EdgeV1Y";
+            this.textBox_EdgeV1Y.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_EdgeV1V2_KeyDown);
             // 
             // textBox_EdgeV2Y
             // 
             resources.ApplyResources(this.textBox_EdgeV2Y, "textBox_EdgeV2Y");
             this.textBox_EdgeV2Y.Name = "textBox_EdgeV2Y";
+            this.textBox_EdgeV2Y.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_EdgeV1V2_KeyDown);
             // 
             // textBox_EdgeV2X
             // 
             resources.ApplyResources(this.textBox_EdgeV2X, "textBox_EdgeV2X");
             this.textBox_EdgeV2X.Name = "textBox_EdgeV2X";
+            this.textBox_EdgeV2X.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_EdgeV1V2_KeyDown);
             // 
             // label2
             // 
@@ -187,21 +206,6 @@
             // 
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            // 
-            // panel1
-            // 
-            resources.ApplyResources(panel1, "panel1");
-            panel1.BackColor = System.Drawing.Color.SeaShell;
-            panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel1.Controls.Add(this.label_EdgeList);
-            panel1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            panel1.Name = "panel1";
-            // 
-            // label_EdgeList
-            // 
-            resources.ApplyResources(this.label_EdgeList, "label_EdgeList");
-            this.label_EdgeList.Name = "label_EdgeList";
             // 
             // Form1
             // 
@@ -228,10 +232,10 @@
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.panel_Buttons.ResumeLayout(false);
-            this.panel_Buttons.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            this.panel_Buttons.ResumeLayout(false);
+            this.panel_Buttons.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
