@@ -902,9 +902,6 @@ DE NODOS:</value>
   <data name="label6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="label6.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
   </data>
@@ -935,9 +932,6 @@ DE NODOS:</value>
   <data name="label_ColorNumber.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="label_ColorNumber.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;label_ColorNumber.Name" xml:space="preserve">
     <value>label_ColorNumber</value>
   </data>
@@ -964,9 +958,6 @@ DE NODOS:</value>
   </data>
   <data name="label_VertexNumber.Text" xml:space="preserve">
     <value>NÚMERO DE VÉRTICES: </value>
-  </data>
-  <data name="label_VertexNumber.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;label_VertexNumber.Name" xml:space="preserve">
     <value>label_VertexNumber</value>
@@ -997,9 +988,6 @@ DE NODOS:</value>
   </data>
   <data name="label_EdgeNumber.Text" xml:space="preserve">
     <value>NÚMERO DE RELACIONES: </value>
-  </data>
-  <data name="label_EdgeNumber.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;label_EdgeNumber.Name" xml:space="preserve">
     <value>label_EdgeNumber</value>
