@@ -11,14 +11,16 @@ namespace GRAPH_COLORING
     class ColoringThreads
     {
         // La lista de colores será compartida.
-        List<Color> colors = new List<Color>(); // Lista de colores. Se pueden ir agregando más.
+        List<Color> colors; // Lista de colores. Se pueden ir agregando más.
         Graph graph;
+        int tIndex = 0; // Para saber en cuál hilo vamos.
         //static Barrier sync; // Para que no regrese al form sin haber terminado los hilos.
         // Uso del Graph Coloring con Hilos.
         // El procedimiento debe ser secuencial porque los de adelante deben saber los colores del de atrás.
         public ColoringThreads(Graph graph)
         {
             this.graph = graph;
+            colors = new List<Color>();
         }
         public void GraphColoring()
         {
@@ -32,7 +34,7 @@ namespace GRAPH_COLORING
 
             Thread[] threads = new Thread[graph.NumberOfVertices]; // 5 hilos.
             int threadIndex = 0;
-            int[] ijValues = new int[2]; // Los índices del nodo.
+            int[] ijValues = new int[3]; // Los índices del nodo y el número del hilo.
             for (int i = 0; i < graph.graphMatrix.GetLength(0); i++)
                 for (int j = 0; j < graph.graphMatrix.GetLength(1); j++)
                     // Colorea solo si existe y tiene alguna relación.
@@ -40,9 +42,11 @@ namespace GRAPH_COLORING
                     {
                         ijValues[0] = i;
                         ijValues[1] = j;
+                        ijValues[2] = threadIndex;
                         threads[threadIndex] = new Thread(MakeThreads);
                         threads[threadIndex].Start(ijValues);
                         threadIndex++;
+                        Thread.Sleep(100); // Para que se inicie el hilo y empiece.
                     }
 
             //sync.SignalAndWait(); // Espera a que todos terminen.
@@ -51,11 +55,13 @@ namespace GRAPH_COLORING
         {
             int[] ij = (int[])ijValues;
             // Exploramos el nodo actual.
-            ExploreNode(graph.VertexSet[ij[0], ij[1]]);
+            ExploreNode(graph.VertexSet[ij[0], ij[1]], ij[2]);
         }
         // Método que explorará un nodo y a sus conectados.
-        private void ExploreNode(Vertex currentVertex)
+        private void ExploreNode(Vertex currentVertex, int threadIndex)
         {
+            while (tIndex != threadIndex) ;
+            tIndex = threadIndex;
             int colorIndex = 0;
             Random r = new Random();
             // Primero coloreamos al nodo que hizo la llamada.
@@ -94,7 +100,7 @@ namespace GRAPH_COLORING
                 currentVertex.Color = colors.ElementAt(colorIndex);
                 SetNeighborNotColorable(ref currentVertex, colorIndex);
             }
-                
+            tIndex++; // Aumentar el índice del hilo.
         }
         // Método que busca en la lista de colores que no se pueden usar en el vértice para ver si 
         //  el actual aparece ahí.
