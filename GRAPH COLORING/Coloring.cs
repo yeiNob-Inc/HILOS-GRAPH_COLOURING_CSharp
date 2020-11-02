@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System;
 
@@ -14,12 +14,15 @@ namespace GRAPH_COLORING
         {
             this.graph = graph;
         }
-        public void GraphColoring()
+        public void GraphColoring(Form1 form)
         {
             List<Color> colors = new List<Color>() ; // Lista de colores. Se pueden ir agregando más.
             Random r = new Random();
             // Agregamos un color para empezar.
             colors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
+
+            int maxColors = -1;
+
             for (int i = 0; i < graph.graphMatrix.GetLength(0); i++)
                 for (int j = 0, colorIndex = 0; j < graph.graphMatrix.GetLength(1); j++)
                     // Colorea solo si existe y tiene alguna relación.
@@ -36,6 +39,8 @@ namespace GRAPH_COLORING
                                     && colorIndex < colors.Count) 
                             {
                                 colorIndex++; // Aumentamos el índice de colores.
+                                if (colorIndex > maxColors)
+                                    maxColors = colorIndex;
                             }
                             /* 
                              * Si el índice supera el número de colores, agregar un nuevo color.
@@ -46,9 +51,53 @@ namespace GRAPH_COLORING
                         graph.VertexSet[i, j].Color = colors.ElementAt(colorIndex);
                         SetNeighborNotColorable(ref graph.VertexSet[i, j], colorIndex);
                     }
+            // Se le suma 1 a maxColors porque el 0 también cuenta.
+            form.label_ColorNumber.Text = "NÚMERO DE COLORES: "+ (maxColors + 1);
+            form.label_ColorNumber.Refresh();
         }
 
-        // Uso del Graph Coloring con Hilos.
+        //// Uso del Graph Coloring con Hilos.
+        //// El procedimiento debe ser secuencial porque los de adelante deben saber los colores del de atrás.
+        //public void GraphColoringThreads()
+        //{
+        //    List<Color> colors = new List<Color>(); // Lista de colores. Se pueden ir agregando más.
+        //    Random r = new Random();
+        //    // Agregamos un color para empezar.
+        //    colors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
+        //    Thread[] threads = new Thread[5]; // 5 hilos.
+        //    for (int i = 0; i < graph.graphMatrix.GetLength(0); i++)
+        //        for (int j = 0, colorIndex = 0; j < graph.graphMatrix.GetLength(1); j++)
+        //            // Colorea solo si existe y tiene alguna relación.
+                    
+        //}
+        //// Método que decidirá el color que usará el vértice.
+        //private void ThreadColorDecision(Graph graph, ref int colorIndex, List<Color> colors, int i, int j, Random r)
+        //{
+        //    if (graph.graphMatrix[i, j] && graph.VertexSet[i, j].ConnectedVertex.Count > 0)
+        //    {// Si hay un edge entre ellos.
+        //        /* Buscamos si se puede colorear con el color actual,
+        //         * si no, reiniciamos el índice de color y lo intentamos.
+        //         * Si recorremos todos los colores, agreamos uno nuevo y lo coloreamos.**/
+        //        if (!IsColoreable(ref graph.VertexSet[i, j], colorIndex))
+        //        {
+        //            colorIndex = 0;
+
+        //            /* Mientras que no se pueda colorear hasta que el índice llegue al límite de colores.*/
+        //            while (!IsColoreable(ref graph.VertexSet[i, j], colorIndex)
+        //                    && colorIndex < colors.Count)
+        //            {
+        //                colorIndex++; // Aumentamos el índice de colores.
+        //            }
+        //            /* 
+        //             * Si el índice supera el número de colores, agregar un nuevo color.
+        //             * En este punto el índice de color ya aumentó, por eso salió del while.**/
+        //            colors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
+        //        }
+        //        // Si ya es coloreable, agregar el color del índice actual.
+        //        graph.VertexSet[i, j].Color = colors.ElementAt(colorIndex);
+        //        SetNeighborNotColorable(ref graph.VertexSet[i, j], colorIndex);
+        //    }
+        //}
 
         // Establecer a los vecinos que no pueden colorear con el color actual.
         private void SetNeighborNotColorable(ref Vertex v, int colorIndex)

@@ -54,7 +54,10 @@
             this.btn_CreateRandomGraph = new System.Windows.Forms.Button();
             this.textBox_RandomGraph = new System.Windows.Forms.TextBox();
             this.label_RandomGraph = new System.Windows.Forms.Label();
-            this.label_NumberOfVertices = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label_ColorNumber = new System.Windows.Forms.Label();
+            this.label_VertexNumber = new System.Windows.Forms.Label();
+            this.label_EdgeNumber = new System.Windows.Forms.Label();
             panel1 = new System.Windows.Forms.Panel();
             panel1.SuspendLayout();
             this.panel_Buttons.SuspendLayout();
@@ -78,7 +81,6 @@
             // panel_Buttons
             // 
             resources.ApplyResources(this.panel_Buttons, "panel_Buttons");
-            this.panel_Buttons.Controls.Add(this.label_NumberOfVertices);
             this.panel_Buttons.Controls.Add(this.btn_CreateRandomGraph);
             this.panel_Buttons.Controls.Add(this.btn_EraseGraph);
             this.panel_Buttons.Controls.Add(this.btn_EraseVertex);
@@ -234,18 +236,35 @@
             resources.ApplyResources(this.label_RandomGraph, "label_RandomGraph");
             this.label_RandomGraph.Name = "label_RandomGraph";
             // 
-            // label_NumberOfVertices
+            // label6
             // 
-            resources.ApplyResources(this.label_NumberOfVertices, "label_NumberOfVertices");
-            this.label_NumberOfVertices.BackColor = System.Drawing.Color.LemonChiffon;
-            this.label_NumberOfVertices.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_NumberOfVertices.Name = "label_NumberOfVertices";
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // label_ColorNumber
+            // 
+            resources.ApplyResources(this.label_ColorNumber, "label_ColorNumber");
+            this.label_ColorNumber.Name = "label_ColorNumber";
+            // 
+            // label_VertexNumber
+            // 
+            resources.ApplyResources(this.label_VertexNumber, "label_VertexNumber");
+            this.label_VertexNumber.Name = "label_VertexNumber";
+            // 
+            // label_EdgeNumber
+            // 
+            resources.ApplyResources(this.label_EdgeNumber, "label_EdgeNumber");
+            this.label_EdgeNumber.Name = "label_EdgeNumber";
             // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label_EdgeNumber);
+            this.Controls.Add(this.label_VertexNumber);
+            this.Controls.Add(this.label_ColorNumber);
             this.Controls.Add(this.textBox_RandomGraph);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label_RandomGraph);
             this.Controls.Add(panel1);
             this.Controls.Add(this.textBox_EdgeV2Y);
@@ -302,7 +321,10 @@
         private System.Windows.Forms.Button btn_CreateRandomGraph;
         public System.Windows.Forms.Label label_RandomGraph;
         private System.Windows.Forms.TextBox textBox_RandomGraph;
-        public System.Windows.Forms.Label label_NumberOfVertices;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label label_ColorNumber;
+        public System.Windows.Forms.Label label_VertexNumber;
+        public System.Windows.Forms.Label label_EdgeNumber;
     }
 }
 

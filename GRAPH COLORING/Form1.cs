@@ -78,7 +78,8 @@ namespace GRAPH_COLORING
             {
                 graph.AddVertex(int.Parse(textBox_VertexX.Text), int.Parse(textBox_VertexY.Text));
                 panel_GraphGrid.Invalidate(); // Dibujar el nuevo vértice.
-                label_NumberOfVertices.Text = "NÚMERO ACTUAL\nDE VÉRTICES:\n" + graph.NumberOfVertices;
+                label_VertexNumber.Text = "NÚMERO ACTUAL\nDE VÉRTICES:\n" + graph.NumberOfVertices;
+                label_VertexNumber.Refresh();
 
             }
             catch // Si hay una excepción por espacios en blanco, letras, etc., sale el Pop up.
@@ -109,7 +110,7 @@ namespace GRAPH_COLORING
         private void btn_GraphColoring_Click(object sender, EventArgs e)
         {
             Coloring c = new Coloring(graph);
-            c.GraphColoring();
+            c.GraphColoring(this);
             //Coloring c = new Coloring(3, graph.VertexSet);
             //c.graphColoring(graph.graphMatrix, 2);
             panel_GraphGrid.Invalidate();
@@ -145,22 +146,34 @@ namespace GRAPH_COLORING
             {
                 //Graph graph = new Graph();
                 Random r = new Random();
+                //int numEdges = 0; // Número de aristas que se crearán
                 // Crear vértices.
                 for (int i = 0; i < int.Parse(textBox_RandomGraph.Text); i++)
                     graph.AddVertex(r.Next(Grid.NumCells), r.Next(Grid.NumCells));
                 // Crear aristas.
-                for (int i = 0; i < Grid.NumCells; i++)
-                    for (int j = 0; j < Grid.NumCells; j++)
-                        graph.AddEdge(r.Next(Grid.NumCells), r.Next(Grid.NumCells),
-                                    r.Next(Grid.NumCells), r.Next(Grid.NumCells),
-                                    label_EdgeList);
+                
+                //for (int i = 0; i < Grid.NumCells; i++)
+                //    for (int j = 0; j < Grid.NumCells; j++)
+                //    {
+                //        // El número de aristas a crear puede ir del 1 al número de vértices menos el mismo.
+                //        numEdges = r.Next(1, graph.NumberOfVertices - 1);
+                //        if(graph.graphMatrix[i, j]) // Si hay un elemento en la matriz vamos a relacionarlo.
+                //            // Hacemos un recorrido por todos los vértices, y si hay uno, hay que relacionarlo.
+                //            for(int k = 0, actualEdge = 1; k < Grid.NumCells && actualEdge < numEdges; k++)
+                //                for(int h = 0; h < Grid.NumCells && actualEdge < numEdges; h++)
+                //                    if(graph.graphMatrix[k, h]) // Si sí hay vértice, relacionarlo.
+                //                    {
+                //                        graph.AddEdge(i, j, k, h, label_EdgeList);
+                //                        actualEdge++;
+                //                    }
+                //    }
                 panel_GraphGrid.Invalidate();
-            }
+        }
             catch
             {
                 Form popUp = new PopUp_XYError();
                 popUp.ShowDialog();
             }
-        }
+}
     }
 }
